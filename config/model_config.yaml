@@ -21,7 +21,7 @@ model:
 
   Cartesia:
     api_key: sk_car_XxSTtK7Rhs96E7Q5ZUhwFA
-    url: https://api.cartesia.ai/tts/bytes
+    url: https://api.cartesia.ai/tts/sse
     voice_id: 29e5f8b4-b953-4160-848f-40fae182235b
 
 

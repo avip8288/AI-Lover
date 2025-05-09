@@ -4,7 +4,9 @@ import streamlit as st
 import os
 import yaml
 import logging
-from typing import TypedDict, Any
+from typing import TypedDict, Any, Iterator # Iterator for generator type hint
+import struct # For WAV header
+import io     # For BytesIO if needed, but direct bytearray is fine
 # Remove asyncio and nest_asyncio imports
 # import asyncio
 # import nest_asyncio
@@ -13,7 +15,7 @@ from typing import TypedDict, Any
 # --- 导入 ---
 try:
     from chat.main import State, app, memory as memory_handler
-    from chat.voice import TTS
+    from chat.voice import TTS # TTS is a generator yielding raw pcm_s16le bytes
     # Removed: from chat.memory import MeMory (using memory_handler instance from chat.main)
     # Removed: from langgraph.graph import END, StateGraph (not used directly in demo.py)
 except ImportError as e:
@@ -33,6 +35,27 @@ if not logger.hasHandlers():
     logger.addHandler(file_handler)
 
 
+# --- WAV Header Helper --- 
+def _create_wav_header(sample_rate: int, num_channels: int, sample_width_bytes: int, num_frames: int) -> bytes:
+    """Helper function to create a WAV header for raw PCM data."""
+    datasize = num_frames * num_channels * sample_width_bytes
+    
+    header = bytearray()
+    header.extend(b'RIFF')
+    header.extend(struct.pack('<I', datasize + 36))  # ChunkSize
+    header.extend(b'WAVE')
+    header.extend(b'fmt ')
+    header.extend(struct.pack('<I', 16))             # Subchunk1Size (16 for PCM)
+    header.extend(struct.pack('<H', 1))              # AudioFormat (1 for PCM)
+    header.extend(struct.pack('<H', num_channels))
+    header.extend(struct.pack('<I', sample_rate))
+    header.extend(struct.pack('<I', sample_rate * num_channels * sample_width_bytes))  # ByteRate
+    header.extend(struct.pack('<H', num_channels * sample_width_bytes))               # BlockAlign
+    header.extend(struct.pack('<H', sample_width_bytes * 8))                          # BitsPerSample
+    header.extend(b'data')
+    header.extend(struct.pack('<I', datasize))      # Subchunk2Size
+    return bytes(header)
+
 # --- Streamlit 界面 (标题等不变) ---
 st.set_page_config(page_title="你的专属女友❤️", page_icon="💬")
 st.title("你的专属女友 ❤️")
@@ -40,7 +63,7 @@ st.caption("和你的虚拟女友开始聊天吧！输入 'exit'，退出或者q
 
 # --- 会话管理 (不变) ---
 if 'session_id' not in st.session_state:
-    session_id_input = st.text_input("请输入你的专属会话 ID (例如 'user123'):", key="session_id_input")
+    session_id_input = st.text_input("请输入你的专属会话 ID (例如 'user123'):", key="session_id_input_demo")
     if session_id_input:
         st.session_state.session_id = session_id_input
         st.rerun()
@@ -52,9 +75,9 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
 
 # --- 显示聊天记录 (不变) ---
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
+for msg_idx, message_data in enumerate(st.session_state.messages):
+    with st.chat_message(message_data["role"]):
+        st.markdown(message_data["content"])
 
 # --- 移除异步处理函数 --- 
 # async def process_user_input(user_prompt: str): ...
@@ -65,7 +88,7 @@ for message in st.session_state.messages:
 # if st.button("测试直接调用 Grok API"): ...
 
 # --- 用户输入处理 (恢复为简单的同步调用) ---
-if prompt := st.chat_input("你想对我说什么？"):
+if prompt := st.chat_input("你想对我说什么？", key="chat_input_main"):
     # 显示用户输入
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
@@ -105,17 +128,52 @@ if prompt := st.chat_input("你想对我说什么？"):
                 with st.chat_message("assistant"):
                     st.markdown(assistant_response)
 
-                # --- 修改：调用 TTS 获取音频数据并在客户端播放 ---
+                # --- 修改：调用 TTS，收集数据块，构建 WAV，然后在客户端播放 ---
                 if assistant_response:
-                    logger.info(f"[Streamlit][Session: {current_session_id}] Attempting to get audio data via TTS for: {assistant_response[:50]}...")
-                    audio_bytes = TTS(assistant_response) # TTS 现在返回字节或 None
+                    logger.info(f"[Streamlit][Session: {current_session_id}] Attempting to get audio stream via TTS for: \"{assistant_response[:50]}...\"")
+                    
+                    audio_chunk_generator: Iterator[bytes] = TTS(assistant_response)
+                    
+                    raw_audio_data = bytearray()
+                    chunk_count = 0
+                    for chunk in audio_chunk_generator:
+                        if chunk:
+                            raw_audio_data.extend(chunk)
+                            chunk_count += 1
+                    logger.info(f"[Streamlit][Session: {current_session_id}] Finished collecting audio chunks. Total chunks: {chunk_count}. Total raw audio data: {len(raw_audio_data)} bytes.")
+                    
+                    if raw_audio_data:
+                        logger.info(f"[Streamlit][Session: {current_session_id}] Received raw audio data, {len(raw_audio_data)} bytes. Constructing WAV.")
+                        
+                        sample_rate = 44100
+                        num_channels = 1 # Assuming mono
+                        sample_width_bytes = 2 # For pcm_s16le
 
-                    if audio_bytes:
-                        logger.info(f"[Streamlit][Session: {current_session_id}] Received audio data, {len(audio_bytes)} bytes. Playing in browser.")
-                        st.audio(audio_bytes, format='audio/wav') # <--- 使用 st.audio 播放
+                        num_frames = len(raw_audio_data) // (num_channels * sample_width_bytes)
+                        
+                        if num_frames > 0:
+                            wav_header = _create_wav_header(sample_rate, num_channels, sample_width_bytes, num_frames)
+                            wav_bytes = wav_header + raw_audio_data
+                            
+                            # --- DEBUG: Save the generated WAV to a file ---
+                            try:
+                                # Ensure logs_path is defined earlier in your script
+                                temp_wav_filename = f"temp_audio_output_{current_session_id}_{len(st.session_state.messages)}.wav"
+                                temp_wav_path = os.path.join(logs_path, temp_wav_filename)
+                                with open(temp_wav_path, "wb") as f:
+                                    f.write(wav_bytes)
+                                logger.info(f"[Streamlit][Session: {current_session_id}] DEBUG: Temporary WAV file saved to: {temp_wav_path}")
+                            except Exception as e_save:
+                                logger.error(f"[Streamlit][Session: {current_session_id}] DEBUG: Error saving temporary WAV file: {e_save}")
+                            # --- END DEBUG ---
+
+                            st.audio(wav_bytes, format='audio/wav')
+                            logger.info(f"[Streamlit][Session: {current_session_id}] WAV constructed and passed to st.audio.")
+                        else:
+                            logger.warning(f"[Streamlit][Session: {current_session_id}] Not enough data to form a complete audio frame. Raw data length: {len(raw_audio_data)}")
+
                     else:
-                        logger.warning(f"[Streamlit][Session: {current_session_id}] TTS did not return audio data.")
-                        # （可选）可以给用户一个提示，比如 st.toast("抱歉，语音暂时无法播放。")
+                        logger.warning(f"[Streamlit][Session: {current_session_id}] TTS generator yielded no data.")
                 # --- 音频处理结束 ---
 
             except Exception as e:
