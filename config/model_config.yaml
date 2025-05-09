@@ -1,0 +1,28 @@
+model:
+  Grok:
+    api_key: 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
+    api_base: https://openrouter.ai/api/v1
+    model: x-ai/grok-3-mini-beta
+    
+  Google:
+    api_key: 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
+    api_base: https://openrouter.ai/api/v1
+    model: google/gemini-2.5-flash-preview
+
+  Qwen:
+    api_key: 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
+    api_base: https://openrouter.ai/api/v1
+    model: qwen/qwen3-235b-a22b:free
+
+  LLama:
+    api_key: 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
+    api_base: https://openrouter.ai/api/v1
+    model: meta-llama/llama-guard-4-12b
+
+  Cartesia:
+    api_key: sk_car_XxSTtK7Rhs96E7Q5ZUhwFA
+    url: https://api.cartesia.ai/tts/bytes
+    voice_id: 29e5f8b4-b953-4160-848f-40fae182235b
+
+
+  

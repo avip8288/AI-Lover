@@ -1,0 +1,10 @@
+langchain==0.3.23
+langchain_core==0.3.54
+langchain_openai==0.3.14
+langgraph==0.3.31
+PyYAML==6.0.2
+Requests==2.32.3
+streamlit==1.41.1
+langchain-community
+openai
+simpleaudio
