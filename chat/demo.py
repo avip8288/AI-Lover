@@ -1,5 +1,31 @@
 # 文件名: streamlit_app.py
 
+import sys # 确保导入 sys
+import os  # 确保导入 os
+
+# --- 开始: 项目根目录路径修改 ---
+# 这段代码将项目根目录 ('Project/') 添加到 sys.path
+# 这样当 demo.py 运行时, Python 可以正确解析项目内的绝对导入路径
+# 例如 'from chat.main import ...' 以及 main.py 内部的 'from sex_chat...'。
+
+# 获取当前 demo.py 脚本的绝对路径
+# 例如: /path/to/Project/sex_chat/chat/demo.py
+_current_script_path = os.path.abspath(__file__)
+# 获取 chat 目录的路径: /path/to/Project/sex_chat/chat
+_chat_dir = os.path.dirname(_current_script_path)
+# 获取 sex_chat 目录的路径: /path/to/Project/sex_chat
+_sex_chat_dir = os.path.dirname(_chat_dir)
+# 获取项目根目录 Project 的路径: /path/to/Project
+_project_root_dir = os.path.dirname(_sex_chat_dir)
+
+# 如果项目根目录不在 sys.path 中，则添加它 (在最前面，有较高优先级)
+if _project_root_dir not in sys.path:
+    sys.path.insert(0, _project_root_dir)
+
+# 清理临时变量 (可选, 保持命名空间干净)
+del _current_script_path, _chat_dir, _sex_chat_dir, _project_root_dir
+# --- 结束: 项目根目录路径修改 ---
+
 import streamlit as st
 import os
 import yaml
@@ -14,7 +40,7 @@ import io     # For BytesIO if needed, but direct bytearray is fine
 
 # --- 导入 ---
 try:
-    from chat.main import State, app, memory as memory_handler
+    from chat.main import State, app, agent, embed_model
     from chat.voice import TTS # TTS is a generator yielding raw pcm_s16le bytes
     # Removed: from chat.memory import MeMory (using memory_handler instance from chat.main)
     # Removed: from langgraph.graph import END, StateGraph (not used directly in demo.py)
@@ -105,12 +131,30 @@ if prompt := st.chat_input("你想对我说什么？", key="chat_input_main"):
         # 直接调用同步的 app.invoke
         with st.spinner("正在思考..."):
             try:
-                # 获取长期记忆 (假设同步)
-                long_term_memory_str = memory_handler.get_long_term(current_session_id)
+                # 修改：使用 agent.search_memory 获取长期记忆，与 main.py 的 main() 函数行为一致
+                # 假设 k=10 与 main.py 中的设置一致
+                # agent.search_memory 期望的参数顺序是 (query_text, embed_model, session_id, k)
+                # 假设它返回一个文档列表 (Langchain Document objects)
+                logger.info(f"[Streamlit][Session: {current_session_id}] Calling agent.search_memory for long-term memory with query: \"{prompt[:50]}...\"")
+                retrieved_docs = agent.search_memory(prompt, embed_model, current_session_id, k=10)
+                
+                long_term_memory_str = ""
+                if isinstance(retrieved_docs, list):
+                    # 将文档内容拼接成字符串
+                    long_term_memory_str = ". ".join([doc.page_content for doc in retrieved_docs if hasattr(doc, 'page_content')])
+                    logger.info(f"[Streamlit][Session: {current_session_id}] Retrieved {len(retrieved_docs)} documents for long-term memory. Combined into string of length {len(long_term_memory_str)}.")
+                elif isinstance(retrieved_docs, str): # 如果 search_memory 直接返回字符串
+                    long_term_memory_str = retrieved_docs
+                    logger.info(f"[Streamlit][Session: {current_session_id}] Retrieved string from agent.search_memory of length {len(long_term_memory_str)}.")
+                else:
+                    logger.warning(f"[Streamlit][Session: {current_session_id}] agent.search_memory returned unexpected type: {type(retrieved_docs)}. Using empty long-term memory.")
+                
+                logger.debug(f"[Streamlit][Session: {current_session_id}] Long-term memory string for State: \"{long_term_memory_str[:100]}...\"")
+
 
                 message = State(
                     input=prompt,
-                    long_term=long_term_memory_str,
+                    long_term=long_term_memory_str, # 使用从 search_memory 获取并处理后的字符串
                     session_id=current_session_id,
                     answer=""
                 )

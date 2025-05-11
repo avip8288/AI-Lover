@@ -24,5 +24,10 @@ model:
     url: https://api.cartesia.ai/tts/sse
     voice_id: 29e5f8b4-b953-4160-848f-40fae182235b
 
+  DoubaoEmbedding:
+    api_key: 0ed28081-c023-4771-8384-11511b00972e
+    api_base: https://ark.cn-beijing.volces.com/api/v3
+    model: ep-20241231142248-x6k4b
+
 
   

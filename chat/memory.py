@@ -3,6 +3,7 @@ from langchain.memory import ChatMessageHistory
 
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 
+
 chat_store={}
 long_term_memory={}
 
@@ -18,7 +19,7 @@ class MeMory:
             chat_store[session_id].messages=chat_store[session_id].messages[-600:]
 
         return chat_store[session_id]
-    
+    '''
     def long_term(self,session_id:str,input:str):
         if session_id not in long_term_memory:
             long_term_memory[session_id]=[]
@@ -32,6 +33,7 @@ class MeMory:
 
     def get_long_term(self,session_id:str):
         return '. '.join(long_term_memory.get(session_id,[]))
+    '''
     
         
 

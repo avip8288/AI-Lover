@@ -1,3 +1,20 @@
+import sys # Add this import
+import os
+
+if __name__ == "__main__":
+    current_script_path = os.path.abspath(__file__)
+  
+    chat_dir = os.path.dirname(current_script_path)
+
+    sex_chat_dir = os.path.dirname(chat_dir)
+
+    project_root_dir = os.path.dirname(sex_chat_dir)
+
+    if project_root_dir not in sys.path:
+        sys.path.insert(0, project_root_dir)
+
+
+
 from langchain_core.prompts import ChatPromptTemplate
 from langgraph.graph import StateGraph, END
 from langchain.schema import HumanMessage
@@ -21,6 +38,8 @@ from typing import Any # 导入 Any
 from memory import MeMory
 from openai import OpenAI
 from voice import TTS
+from sex_chat.Interaction_Design.user_memory import Save_Memory, LLMEmbedding, Retriever_Memory
+
 
 current_path=os.path.abspath(__file__)
 current=os.path.dirname(current_path)
@@ -29,7 +48,21 @@ logs_path=os.path.join(path,'logs')
 os.makedirs(logs_path,exist_ok=True)
 log_path=os.path.join(logs_path,'sex_log.log')
 
-logging.basicConfig(filename=log_path,level=logging.INFO,format='%(asctime)s-%(levelname)s-%(message)s')
+#在这里添加下面的调试代码 VVVVVV
+# --- 调试：打印计算出的日志文件绝对路径 ---
+_ABS_LOG_PATH_FOR_DEBUG = os.path.abspath(log_path)
+print(f"[main.py via print] Attempting to log to: {_ABS_LOG_PATH_FOR_DEBUG}")
+# --- 调试结束 ---
+
+logging.basicConfig(filename=log_path,level=logging.INFO,format='%(asctime)s-%(levelname)s-%(message)s',force=True)
+
+# 在这里添加下面的调试代码 VVVVVV
+# --- 调试：尝试记录一条测试日志 ---
+try:
+    logging.info("[main.py on load] Logging configured and test message written.")
+except Exception as e_log_test:
+    print(f"[main.py via print] Error trying to write initial test log: {e_log_test}")
+# --- 调试结束 ---
 
 config_path=os.path.join(path,'config')
 config_path=os.path.join(config_path,'model_config.yaml')
@@ -88,6 +121,10 @@ memory=MeMory()
 safe=CustomLLM(model=config['model']['LLama']['model'],api_key=config['model']['LLama']['api_key'],
                api_base=config['model']['LLama']['api_base'])
 
+embed_model=LLMEmbedding(config['model']['DoubaoEmbedding']['model'],
+                         config['model']['DoubaoEmbedding']['api_key'],
+                         config['model']['DoubaoEmbedding']['api_base'])
+
 class State(TypedDict):
     input:str
     long_term:str
@@ -103,8 +140,6 @@ class Agent:
     def safe_judge(self, input_text: str) -> str:
         logging.info(f"Calling Llama Guard sync for input: {input_text[:50]}...")
         try:
-            # Assuming 'safe' is the CustomLLM instance for Llama Guard
-            # LangChain LLM interface expects _call to be used via invoke or direct call implicitly
             result = safe._call(input_text) 
             logging.info(f"Llama Guard result: {result}")
             if 'safe' in result and 'unsafe' not in result:
@@ -114,6 +149,19 @@ class Agent:
         except Exception as e:
             logging.error(f"调用 Llama Guard (_call) 时出错: {e}", exc_info=True)
             return 'unsafe' # Default to unsafe on error
+        
+    
+    def search_memory(self, query_text: str, embed_model: LLMEmbedding, session_id: str, k: int):
+        save_action = Save_Memory(query_text, embed_model, session_id)
+        save_result = save_action.process()
+        if save_result is not None:
+            logging.error(f"[Agent.search_memory] Error during Save_Memory.process: {save_result}")
+
+        retriever_memory = Retriever_Memory(embed_model, session_id)
+        retrieved_docs = retriever_memory.retriever(query_text, k)
+        return retrieved_docs
+
+        
 
     def chat(self, state: State):
         logging.info(f"Entering sync chat for session: {state['session_id']}")
@@ -153,18 +201,12 @@ class Agent:
             response_content = response if isinstance(response, str) else str(response) 
             logging.info(f"Main chat chain response received for session {session_id_str}.")
 
-            # Use synchronous memory update
-            try:
-                self.memory.long_term(session_id_str, state['input'])
-                logging.info(f"Long term memory updated for session {session_id_str}.")
-            except Exception as mem_e:
-                logging.error(f"更新长期记忆时出错 for session {session_id_str}: {mem_e}", exc_info=True)
 
             state['answer'] = response_content
         except Exception as e:
-            logging.error(f"执行主聊天链 invoke 或更新记忆时出错 for session {session_id_str}: {e}", exc_info=True)
-            state['answer'] = response_content if response_content is not None else f"思考时出了点问题: {e}"
-
+            logging.info(f'回答出现了错误 {str(e)}')
+            state['answer']=[]
+            
         return state
 
     
@@ -182,31 +224,35 @@ workflow.add_edge('chat',END)
 app=workflow.compile()
 
 def main():
-    session_id=input('输入会话ID: ')
-    long_term_memory=memory.get_long_term(session_id)
-    message=State(
-        input=input('输入你的信息: '),
-        long_term=long_term_memory,
+    session_id = input('输入会话ID: ')
+    
+    user_text_input = input('输入你的信息: ')
+    
+    message = State(
+        input=user_text_input,
+        long_term=agent.search_memory(user_text_input, embed_model, session_id, 10),
         session_id=session_id,
         answer=''
     )
-    result=app.invoke(message)
+    result = app.invoke(message)
     while True:
-        content=result.get('answer','没有回复')
+        content = result.get('answer', '没有回复')
         print(content)
-        content_tts=TTS(content)
-        user_input=input('输入信息: ')
-        if user_input.strip().lower() in ['exit','quit','退出']:
-            return '再见，宝贝，爱你'
         
-        long_term=memory.get_long_term(session_id)
-        message=State(
-            input=user_input,
+        user_text_input_loop = input('输入信息: ')
+        
+        if user_text_input_loop.strip().lower() in ['exit', 'quit', '退出']:
+            print('再见，宝贝，爱你')
+            return
+        
+        long_term = agent.search_memory(user_text_input_loop, embed_model, session_id, 10)
+        message = State(
+            input=user_text_input_loop,
             long_term=long_term,
             session_id=session_id,
             answer=''
         )
-        result=app.invoke(message)
+        result = app.invoke(message)
 
-if __name__=='__main__':
-    print(main())
+if __name__ == '__main__':
+    main()
