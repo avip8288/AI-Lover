@@ -16,7 +16,7 @@ from pydantic import BaseModel, Field
 import yaml
 import os
 import logging
-
+import math
 
 """ 
 本轮主要是通过FAISS来存储相应用户编号的记忆
@@ -42,6 +42,30 @@ class LLMEmbedding(Embeddings):
         self.api_key=api_key
         self.api_base=api_base
 
+    #做归一化向量
+    #用L2范数更加贴近向量检索
+    def normalize(self,data):
+        n=len(data)
+        final=[]
+        if isinstance(data[-1],float):
+            data_new=[i**2 for i in data]
+            sum_data=sum(data_new)
+            total=math.sqrt(sum_data)
+            normalize_data=[value/total for value in data]
+
+            return normalize_data
+        else:
+            for idx in range(n):
+                nums=data[idx]
+                data_new=[i**2 for i in nums]
+                sum_data=sum(data_new)
+                total=math.sqrt(sum_data)
+                normalize_data=[value/total for value in nums]
+                final.append(normalize_data)
+            
+            return final
+
+
     def embed_documents(self, texts: List[str]) -> List[List[float]]:
         headers={
             'Authorization':f'Bearer {self.api_key}',
@@ -56,10 +80,12 @@ class LLMEmbedding(Embeddings):
 
         response=requests.post(f'{self.api_base}/embeddings',json=data,headers=headers)
         result=[value['embedding'] for value in response.json()['data']]
-        return result
+        final=self.normalize(result)
+        return final
     
     def embed_query(self, text: str) -> List[float]:
-        return self.embed_documents([text])[-1]
+        result=self.embed_documents([text])[-1]
+        return result
     
 Embeddings_model=LLMEmbedding(config['model']['DoubaoEmbedding']['model'],config['model']['DoubaoEmbedding']['api_key'],
                               config['model']['DoubaoEmbedding']['api_base'])
@@ -106,10 +132,11 @@ class Save_Memory:
             logging.error(f"[Save_Memory] Fatal: Could not create FAISS directory {abs_index_path}: {e}", exc_info=True)
             return f"创建向量数据库目录时出错: {str(e)}"
 
-        current_text = [self.text]
         # FAISS 元数据通常需要字符串、整数、浮点数或布尔值
-        current_user_id = [{'user_id': str(self.user_id)}] 
+        spliter=RecursiveCharacterTextSplitter(chunk_size=50,chunk_overlap=20)
 
+        text_split=spliter.split_text(self.text)
+        current_user_id=[{'user_id':self.user_id}]*len(text_split)
         faiss_db = None
         # 检查实际的索引文件是否存在，以此判断是否是已存在的索引
         faiss_index_file_concrete = os.path.join(self.index_path, "index.faiss")
@@ -123,7 +150,7 @@ class Save_Memory:
                     allow_dangerous_deserialization=True
                 )
                 logging.info(f"[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.")
-                faiss_db.add_texts(texts=current_text, metadatas=current_user_id)
+                faiss_db.add_texts(texts=text_split, metadatas=current_user_id)
             except Exception as e:
                 logging.error(f"[Save_Memory] Error loading or adding to existing FAISS DB from {abs_index_path}. Will attempt to re-initialize. Error: {str(e)}", exc_info=True)
                 faiss_db = None # 明确设置为 None 以触发重新初始化
@@ -135,7 +162,7 @@ class Save_Memory:
             try:
                 logging.info(f"[Save_Memory] Initializing new FAISS DB at {abs_index_path}")
                 faiss_db = FAISS.from_texts(
-                    texts=current_text,
+                    texts=text_split,
                     embedding=self.model,
                     metadatas=current_user_id
                 )
@@ -199,7 +226,8 @@ class Retriever_Memory:
             # 修正 similarity_search 的调用方式，使用 ** 解包参数字典
             results=faiss_db.similarity_search(query=text, **search_params)
             logging.info(f"[Retriever_Memory] Search completed. Found {len(results)} results.")
-            return results
+            answer=[value.page_content for value in results]
+            return answer
         except Exception as e:
             logging.error(f"[Retriever_Memory] Error during FAISS search or load from {abs_index_path}: {str(e)}", exc_info=True)
             return []
@@ -207,10 +235,12 @@ class Retriever_Memory:
             
 
 if __name__=='__main__':
-    text='你好啊，朋友'
+    text=['你好啊，朋友']
     user_id='3'
-    save_memory=Save_Memory(text,Embeddings_model,user_id)
-    save_memory
+    embed_model=Embeddings_model.embed_documents(text)
+    import ipdb;ipdb.set_trace()
+    
+    
         
         
 

@@ -39,7 +39,7 @@ from memory import MeMory
 from openai import OpenAI
 from voice import TTS
 from sex_chat.Interaction_Design.user_memory import Save_Memory, LLMEmbedding, Retriever_Memory
-
+from user_process import Similarity
 
 current_path=os.path.abspath(__file__)
 current=os.path.dirname(current_path)
@@ -124,6 +124,9 @@ safe=CustomLLM(model=config['model']['LLama']['model'],api_key=config['model']['
 embed_model=LLMEmbedding(config['model']['DoubaoEmbedding']['model'],
                          config['model']['DoubaoEmbedding']['api_key'],
                          config['model']['DoubaoEmbedding']['api_base'])
+
+similarity=Similarity(embed_model)
+
 
 class State(TypedDict):
     input:str
@@ -230,7 +233,7 @@ def main():
     
     message = State(
         input=user_text_input,
-        long_term=agent.search_memory(user_text_input, embed_model, session_id, 10),
+        long_term=agent.search_memory(user_text_input, embed_model, session_id, 2),
         session_id=session_id,
         answer=''
     )
@@ -244,15 +247,29 @@ def main():
         if user_text_input_loop.strip().lower() in ['exit', 'quit', '退出']:
             print('再见，宝贝，爱你')
             return
-        
-        long_term = agent.search_memory(user_text_input_loop, embed_model, session_id, 10)
-        message = State(
-            input=user_text_input_loop,
-            long_term=long_term,
-            session_id=session_id,
-            answer=''
-        )
-        result = app.invoke(message)
-
+        user_process=similarity.process(user_text_input_loop,session_id,3)
+        if user_process:
+            score=user_process[0][-1]
+            if score<=0.85:
+                long_term = agent.search_memory(user_text_input_loop, embed_model, session_id,3)
+                message = State(
+                    input=user_text_input_loop,
+                    long_term=long_term,
+                    session_id=session_id,
+                    answer=''
+                )
+                result = app.invoke(message)
+            else:
+                retriever_Memory=Retriever_Memory(embed_model,session_id)
+                retriever=retriever_Memory.retriever(user_text_input_loop,3)
+                message=State(
+                    input=user_text_input_loop,
+                    long_term=retriever,
+                    session_id=session_id,
+                    answer=''
+                )
+                result=app.invoke(message)
+        else:
+            return '相似度分数列表为空，需要排查'
 if __name__ == '__main__':
     main()
