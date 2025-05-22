@@ -227,10 +227,11 @@ class Retriever_Memory:
             results=faiss_db.similarity_search(query=text, **search_params)
             logging.info(f"[Retriever_Memory] Search completed. Found {len(results)} results.")
             answer=[value.page_content for value in results]
-            return answer
+            final=','.join(answer)
+            return final
         except Exception as e:
             logging.error(f"[Retriever_Memory] Error during FAISS search or load from {abs_index_path}: {str(e)}", exc_info=True)
-            return []
+            return ''
 
             
 

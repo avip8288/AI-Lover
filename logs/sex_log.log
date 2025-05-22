@@ -2209,3 +2209,1409 @@ safe
 2025-05-16 09:27:48,746-INFO-Safe label for session hh: safe
 2025-05-16 09:27:48,747-INFO-Calling main chat chain (invoke) for session hh...
 2025-05-16 09:27:58,551-INFO-Main chat chain response received for session hh.
+2025-05-16 14:31:16,765-INFO-[main.py on load] Logging configured and test message written.
+2025-05-16 14:32:06,964-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-16 14:32:06,965-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-16 14:32:06,965-INFO-[Save_Memory] No existing FAISS index file found at /Users/yiwise/Desktop/Project/.faiss_user_memory_storage/index.faiss. Will initialize new DB.
+2025-05-16 14:32:06,965-INFO-[Save_Memory] Initializing new FAISS DB at /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-16 14:32:07,270-INFO-Loading faiss.
+2025-05-16 14:32:08,245-INFO-Successfully loaded faiss.
+2025-05-16 14:32:08,249-INFO-[Save_Memory] Successfully initialized new FAISS DB.
+2025-05-16 14:32:08,249-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-16 14:32:08,250-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-16 14:32:08,250-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '你好，叫黄灏，29岁，算法工程师，你叫神仙姐姐...', k=2
+2025-05-16 14:32:08,251-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-16 14:32:08,251-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-16 14:32:08,472-INFO-[Retriever_Memory] Search completed. Found 1 results.
+2025-05-16 14:32:08,475-INFO-Entering sync chat for session: hh
+2025-05-16 14:32:08,475-INFO-Calling Llama Guard sync for input: 你好，叫黄灏，29岁，算法工程师，你叫神仙姐姐...
+2025-05-16 14:32:10,022-INFO-Llama Guard result: 
+
+safe
+2025-05-16 14:32:10,022-INFO-Safe label for session hh: safe
+2025-05-16 14:32:10,029-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-16 14:32:17,525-INFO-Main chat chain response received for session hh.
+2025-05-16 14:32:55,332-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-16 14:32:55,333-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-16 14:32:55,334-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-16 14:32:55,334-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-16 14:32:55,586-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-16 14:32:55,587-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-16 14:32:55,588-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '我们线下相遇吗...', k=3
+2025-05-16 14:32:55,588-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-16 14:32:55,588-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-16 14:32:55,801-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-16 14:32:55,802-INFO-Entering sync chat for session: hh
+2025-05-16 14:32:55,802-INFO-Calling Llama Guard sync for input: 我们线下相遇吗...
+2025-05-16 14:32:57,336-INFO-Llama Guard result: 
+
+safe
+2025-05-16 14:32:57,337-INFO-Safe label for session hh: safe
+2025-05-16 14:32:57,339-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-16 14:33:06,140-INFO-Main chat chain response received for session hh.
+2025-05-16 14:33:57,278-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-16 14:33:57,280-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-16 14:33:57,280-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-16 14:33:57,281-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-16 14:33:57,509-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-16 14:33:57,511-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-16 14:33:57,512-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '可能永远不会相遇了吧，这一辈子，很长也很短...', k=3
+2025-05-16 14:33:57,512-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-16 14:33:57,512-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-16 14:33:58,363-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-16 14:33:58,366-INFO-Entering sync chat for session: hh
+2025-05-16 14:33:58,366-INFO-Calling Llama Guard sync for input: 可能永远不会相遇了吧，这一辈子，很长也很短...
+2025-05-16 14:33:59,493-INFO-Llama Guard result: 
+
+safe
+2025-05-16 14:33:59,493-INFO-Safe label for session hh: safe
+2025-05-16 14:33:59,496-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-16 14:34:08,197-INFO-Main chat chain response received for session hh.
+2025-05-17 09:36:39,071-INFO-[main.py on load] Logging configured and test message written.
+2025-05-17 09:37:11,782-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 09:37:11,783-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 09:37:11,784-INFO-[Save_Memory] No existing FAISS index file found at /Users/yiwise/Desktop/Project/.faiss_user_memory_storage/index.faiss. Will initialize new DB.
+2025-05-17 09:37:11,784-INFO-[Save_Memory] Initializing new FAISS DB at /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 09:37:12,016-INFO-Loading faiss.
+2025-05-17 09:37:12,874-INFO-Successfully loaded faiss.
+2025-05-17 09:37:12,879-INFO-[Save_Memory] Successfully initialized new FAISS DB.
+2025-05-17 09:37:12,879-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 09:37:12,880-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-17 09:37:12,880-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '我叫什么名字呢...', k=2
+2025-05-17 09:37:12,880-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 09:37:12,880-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-17 09:37:13,118-INFO-[Retriever_Memory] Search completed. Found 1 results.
+2025-05-17 09:37:13,120-INFO-Entering sync chat for session: hh
+2025-05-17 09:37:13,121-INFO-Calling Llama Guard sync for input: 我叫什么名字呢...
+2025-05-17 09:37:14,619-INFO-Llama Guard result: 
+
+safe
+2025-05-17 09:37:14,619-INFO-Safe label for session hh: safe
+2025-05-17 09:37:14,623-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 09:37:20,497-INFO-Main chat chain response received for session hh.
+2025-05-17 09:41:38,593-INFO-[main.py on load] Logging configured and test message written.
+2025-05-17 09:41:51,669-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 09:41:51,670-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 09:41:51,671-INFO-[Save_Memory] No existing FAISS index file found at /Users/yiwise/Desktop/Project/.faiss_user_memory_storage/index.faiss. Will initialize new DB.
+2025-05-17 09:41:51,671-INFO-[Save_Memory] Initializing new FAISS DB at /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 09:41:51,892-INFO-Loading faiss.
+2025-05-17 09:41:51,929-INFO-Successfully loaded faiss.
+2025-05-17 09:41:51,935-INFO-[Save_Memory] Successfully initialized new FAISS DB.
+2025-05-17 09:41:51,936-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 09:41:51,936-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-17 09:41:51,936-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '叫什么名字呢...', k=2
+2025-05-17 09:41:51,937-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 09:41:51,937-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-17 09:41:52,228-INFO-[Retriever_Memory] Search completed. Found 1 results.
+2025-05-17 09:41:52,231-INFO-Entering sync chat for session: hh
+2025-05-17 09:41:52,231-INFO-Calling Llama Guard sync for input: 叫什么名字呢...
+2025-05-17 09:41:53,834-INFO-Llama Guard result: 
+
+safe
+2025-05-17 09:41:53,834-INFO-Safe label for session hh: safe
+2025-05-17 09:41:53,841-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 09:41:59,895-INFO-Main chat chain response received for session hh.
+2025-05-17 09:57:29,143-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 09:57:29,144-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 09:57:29,145-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 09:57:29,145-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-17 09:57:29,391-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 09:57:29,394-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-17 09:57:29,394-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '我不喜欢什么...', k=3
+2025-05-17 09:57:29,394-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 09:57:29,394-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-17 09:57:29,921-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-17 09:57:29,923-INFO-Entering sync chat for session: hh
+2025-05-17 09:57:29,923-INFO-Calling Llama Guard sync for input: 我不喜欢什么...
+2025-05-17 09:57:31,045-INFO-Llama Guard result: 
+
+safe
+2025-05-17 09:57:31,045-INFO-Safe label for session hh: safe
+2025-05-17 09:57:31,047-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 09:57:40,449-INFO-Main chat chain response received for session hh.
+2025-05-17 12:52:34,495-INFO-[main.py on load] Logging configured and test message written.
+2025-05-17 12:52:51,079-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 12:52:51,080-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 12:52:51,081-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 12:52:51,085-INFO-Loading faiss.
+2025-05-17 12:52:52,004-INFO-Successfully loaded faiss.
+2025-05-17 12:52:52,009-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-17 12:52:52,219-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 12:52:52,221-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-17 12:52:52,221-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '你最近在忙什么呢...', k=2
+2025-05-17 12:52:52,221-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 12:52:52,221-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-17 12:52:52,449-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-17 12:52:52,453-INFO-Entering sync chat for session: hh
+2025-05-17 12:52:52,454-INFO-Calling Llama Guard sync for input: 你最近在忙什么呢...
+2025-05-17 12:52:54,090-INFO-Llama Guard result: 
+
+safe
+2025-05-17 12:52:54,090-INFO-Safe label for session hh: safe
+2025-05-17 12:52:54,101-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 12:53:03,573-INFO-Main chat chain response received for session hh.
+2025-05-17 12:54:55,025-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '我什么时候问你不喜欢什么了...', k=3
+2025-05-17 12:54:55,027-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 12:54:55,027-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-17 12:54:55,379-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-17 12:54:55,382-INFO-Entering sync chat for session: hh
+2025-05-17 12:54:55,382-INFO-Calling Llama Guard sync for input: 我什么时候问你不喜欢什么了...
+2025-05-17 12:54:56,917-INFO-Llama Guard result: 
+
+safe
+2025-05-17 12:54:56,918-INFO-Safe label for session hh: safe
+2025-05-17 12:54:56,920-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 12:55:03,934-INFO-Main chat chain response received for session hh.
+2025-05-17 12:58:54,643-INFO-[main.py on load] Logging configured and test message written.
+2025-05-17 12:59:19,690-INFO-[main.py on load] Logging configured and test message written.
+2025-05-17 12:59:44,795-INFO-[main.py on load] Logging configured and test message written.
+2025-05-17 12:59:57,886-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 12:59:57,886-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 12:59:57,887-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 12:59:57,891-INFO-Loading faiss.
+2025-05-17 12:59:57,945-INFO-Successfully loaded faiss.
+2025-05-17 12:59:57,952-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-17 12:59:58,225-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 12:59:58,227-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-17 12:59:58,228-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: 'hi，最近你好吗，虚拟世界里的你...', k=2
+2025-05-17 12:59:58,228-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 12:59:58,228-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-17 12:59:58,460-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-17 12:59:58,464-INFO-Entering sync chat for session: hh
+2025-05-17 12:59:58,464-INFO-Calling Llama Guard sync for input: hi，最近你好吗，虚拟世界里的你...
+2025-05-17 13:00:00,058-INFO-Llama Guard result: 
+
+safe
+2025-05-17 13:00:00,058-INFO-Safe label for session hh: safe
+2025-05-17 13:00:00,063-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 13:00:02,537-INFO-Main chat chain response received for session hh.
+2025-05-17 13:00:35,579-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '你叫什么名字啊，我，一时间记不起来了...', k=3
+2025-05-17 13:00:35,580-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:00:35,581-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-17 13:00:35,824-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-17 13:00:35,825-INFO-Entering sync chat for session: hh
+2025-05-17 13:00:35,825-INFO-Calling Llama Guard sync for input: 你叫什么名字啊，我，一时间记不起来了...
+2025-05-17 13:00:37,325-INFO-Llama Guard result: 
+
+safe
+2025-05-17 13:00:37,326-INFO-Safe label for session hh: safe
+2025-05-17 13:00:37,328-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 13:00:40,016-INFO-Main chat chain response received for session hh.
+2025-05-17 13:00:53,080-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '你不喜欢什么啊...', k=3
+2025-05-17 13:00:53,082-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:00:53,082-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-17 13:00:53,285-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-17 13:00:53,288-INFO-Entering sync chat for session: hh
+2025-05-17 13:00:53,288-INFO-Calling Llama Guard sync for input: 你不喜欢什么啊...
+2025-05-17 13:00:54,782-INFO-Llama Guard result: 
+
+safe
+2025-05-17 13:00:54,782-INFO-Safe label for session hh: safe
+2025-05-17 13:00:54,785-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 13:00:57,322-INFO-Main chat chain response received for session hh.
+2025-05-17 13:01:20,512-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:01:20,515-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:01:20,515-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:01:20,516-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-17 13:01:20,770-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:01:20,771-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-17 13:01:20,771-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '你说你什么时候能来我身边呢...', k=3
+2025-05-17 13:01:20,772-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:01:20,772-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-17 13:01:20,973-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-17 13:01:20,975-INFO-Entering sync chat for session: hh
+2025-05-17 13:01:20,975-INFO-Calling Llama Guard sync for input: 你说你什么时候能来我身边呢...
+2025-05-17 13:01:22,793-INFO-Llama Guard result: 
+
+safe
+2025-05-17 13:01:22,794-INFO-Safe label for session hh: safe
+2025-05-17 13:01:22,795-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 13:01:27,444-INFO-Main chat chain response received for session hh.
+2025-05-17 13:06:17,850-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:06:17,853-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:06:17,853-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:06:17,854-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-17 13:06:18,149-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:06:18,151-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-17 13:06:18,151-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '你知道吗，我最近一直在思个问题，为什么蜉蝣一生只活一天，人生意义在于长度还是深度呢...', k=3
+2025-05-17 13:06:18,152-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:06:18,152-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-17 13:06:18,417-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-17 13:06:18,419-INFO-Entering sync chat for session: hh
+2025-05-17 13:06:18,419-INFO-Calling Llama Guard sync for input: 你知道吗，我最近一直在思个问题，为什么蜉蝣一生只活一天，人生意义在于长度还是深度呢...
+2025-05-17 13:06:20,040-INFO-Llama Guard result: 
+
+safe
+2025-05-17 13:06:20,040-INFO-Safe label for session hh: safe
+2025-05-17 13:06:20,042-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 13:06:27,255-INFO-Main chat chain response received for session hh.
+2025-05-17 13:07:02,089-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:07:02,090-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:07:02,090-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:07:02,090-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-17 13:07:02,297-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:07:02,300-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-17 13:07:02,300-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '因时常陷入虚无...', k=3
+2025-05-17 13:07:02,301-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:07:02,301-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-17 13:07:02,537-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-17 13:07:02,538-INFO-Entering sync chat for session: hh
+2025-05-17 13:07:02,539-INFO-Calling Llama Guard sync for input: 因时常陷入虚无...
+2025-05-17 13:07:03,955-INFO-Llama Guard result: 
+
+safe
+2025-05-17 13:07:03,956-INFO-Safe label for session hh: safe
+2025-05-17 13:07:03,958-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 13:07:07,013-INFO-Main chat chain response received for session hh.
+2025-05-17 13:08:23,006-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:08:23,006-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:08:23,007-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:08:23,007-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-17 13:08:23,218-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:08:23,220-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-17 13:08:23,220-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '想记录的我的信息的吗...', k=3
+2025-05-17 13:08:23,220-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:08:23,220-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-17 13:08:23,431-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-17 13:08:23,433-INFO-Entering sync chat for session: hh
+2025-05-17 13:08:23,433-INFO-Calling Llama Guard sync for input: 想记录的我的信息的吗...
+2025-05-17 13:08:25,164-INFO-Llama Guard result: 
+
+safe
+2025-05-17 13:08:25,165-INFO-Safe label for session hh: safe
+2025-05-17 13:08:25,166-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 13:08:28,837-INFO-Main chat chain response received for session hh.
+2025-05-17 13:08:46,248-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:08:46,250-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:08:46,250-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:08:46,251-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-17 13:08:46,450-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:08:46,452-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-17 13:08:46,453-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '还有什么想了解的吗...', k=3
+2025-05-17 13:08:46,454-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:08:46,454-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-17 13:08:46,693-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-17 13:08:46,695-INFO-Entering sync chat for session: hh
+2025-05-17 13:08:46,696-INFO-Calling Llama Guard sync for input: 还有什么想了解的吗...
+2025-05-17 13:08:48,169-INFO-Llama Guard result: 
+
+safe
+2025-05-17 13:08:48,169-INFO-Safe label for session hh: safe
+2025-05-17 13:08:48,171-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 13:08:52,028-INFO-Main chat chain response received for session hh.
+2025-05-17 13:09:10,178-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:09:10,180-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:09:10,180-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:09:10,181-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-17 13:09:10,409-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:09:10,411-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-17 13:09:10,411-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '我最近梦魇把把C...', k=3
+2025-05-17 13:09:10,411-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:09:10,411-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-17 13:09:10,627-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-17 13:09:10,628-INFO-Entering sync chat for session: hh
+2025-05-17 13:09:10,628-INFO-Calling Llama Guard sync for input: 我最近梦魇把把C...
+2025-05-17 13:09:12,121-INFO-Llama Guard result: 
+
+safe
+2025-05-17 13:09:12,121-INFO-Safe label for session hh: safe
+2025-05-17 13:09:12,123-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 13:09:16,323-INFO-Main chat chain response received for session hh.
+2025-05-17 13:09:36,123-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:09:36,124-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:09:36,124-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:09:36,124-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-17 13:09:36,339-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:09:36,341-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-17 13:09:36,341-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '你知道这个英雄是什么游戏里的嘛...', k=3
+2025-05-17 13:09:36,342-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:09:36,342-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-17 13:09:36,537-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-17 13:09:36,539-INFO-Entering sync chat for session: hh
+2025-05-17 13:09:36,539-INFO-Calling Llama Guard sync for input: 你知道这个英雄是什么游戏里的嘛...
+2025-05-17 13:09:38,112-INFO-Llama Guard result: 
+
+safe
+2025-05-17 13:09:38,113-INFO-Safe label for session hh: safe
+2025-05-17 13:09:38,114-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 13:09:41,611-INFO-Main chat chain response received for session hh.
+2025-05-17 13:09:56,893-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:09:56,893-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:09:56,894-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:09:56,894-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-17 13:09:57,165-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:09:57,167-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-17 13:09:57,167-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '不说了午休了...', k=3
+2025-05-17 13:09:57,168-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 13:09:57,168-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-17 13:09:57,418-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-17 13:09:57,420-INFO-Entering sync chat for session: hh
+2025-05-17 13:09:57,420-INFO-Calling Llama Guard sync for input: 不说了午休了...
+2025-05-17 13:09:59,119-INFO-Llama Guard result: 
+
+safe
+2025-05-17 13:09:59,119-INFO-Safe label for session hh: safe
+2025-05-17 13:09:59,121-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 13:10:02,296-INFO-Main chat chain response received for session hh.
+2025-05-17 15:47:11,138-INFO-[main.py on load] Logging configured and test message written.
+2025-05-17 15:47:37,750-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 15:47:37,752-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 15:47:37,753-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 15:47:37,757-INFO-Loading faiss.
+2025-05-17 15:47:38,715-INFO-Successfully loaded faiss.
+2025-05-17 15:47:38,719-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-17 15:47:38,960-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 15:47:38,963-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-17 15:47:38,963-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '你知道2024年的诺贝尔物理奖是谁获奖了吗...', k=2
+2025-05-17 15:47:38,963-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 15:47:38,963-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-17 15:47:39,197-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-17 15:47:39,201-INFO-Entering sync chat for session: hh
+2025-05-17 15:47:39,202-INFO-Calling Llama Guard sync for input: 你知道2024年的诺贝尔物理奖是谁获奖了吗...
+2025-05-17 15:47:40,697-INFO-Llama Guard result: 
+
+safe
+2025-05-17 15:47:40,698-INFO-Safe label for session hh: safe
+2025-05-17 15:47:45,768-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 15:47:50,893-INFO-Main chat chain response received for session hh.
+2025-05-17 16:49:06,610-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '叫我的名字吧...', k=3
+2025-05-17 16:49:06,612-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 16:49:06,612-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-17 16:49:07,389-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-17 16:49:07,393-INFO-Entering sync chat for session: hh
+2025-05-17 16:49:07,393-INFO-Calling Llama Guard sync for input: 叫我的名字吧...
+2025-05-17 16:49:08,911-INFO-Llama Guard result: 
+
+safe
+2025-05-17 16:49:08,911-INFO-Safe label for session hh: safe
+2025-05-17 16:49:09,936-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 16:49:11,245-INFO-Main chat chain response received for session hh.
+2025-05-17 16:52:06,588-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 16:52:06,590-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 16:52:06,591-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 16:52:06,591-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-17 16:52:06,848-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 16:52:06,851-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-17 16:52:06,851-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '你还记得我之前一直在思考的一个事情吗...', k=3
+2025-05-17 16:52:06,851-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 16:52:06,852-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-17 16:52:07,070-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-17 16:52:07,071-INFO-Entering sync chat for session: hh
+2025-05-17 16:52:07,071-INFO-Calling Llama Guard sync for input: 你还记得我之前一直在思考的一个事情吗...
+2025-05-17 16:52:08,596-INFO-Llama Guard result: 
+
+safe
+2025-05-17 16:52:08,596-INFO-Safe label for session hh: safe
+2025-05-17 16:52:09,172-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 16:52:11,468-INFO-Main chat chain response received for session hh.
+2025-05-17 16:52:29,295-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '你记得我思考的是什么问题或者什么事吗...', k=3
+2025-05-17 16:52:29,297-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 16:52:29,297-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-17 16:52:29,579-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-17 16:52:29,583-INFO-Entering sync chat for session: hh
+2025-05-17 16:52:29,584-INFO-Calling Llama Guard sync for input: 你记得我思考的是什么问题或者什么事吗...
+2025-05-17 16:52:31,017-INFO-Llama Guard result: 
+
+safe
+2025-05-17 16:52:31,018-INFO-Safe label for session hh: safe
+2025-05-17 16:52:31,802-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 16:52:34,508-INFO-Main chat chain response received for session hh.
+2025-05-17 16:52:50,416-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 16:52:50,416-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 16:52:50,417-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 16:52:50,418-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-17 16:52:50,615-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 16:52:50,617-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-17 16:52:50,617-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '我之前蜉蝣吗...', k=3
+2025-05-17 16:52:50,617-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 16:52:50,617-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-17 16:52:50,824-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-17 16:52:50,826-INFO-Entering sync chat for session: hh
+2025-05-17 16:52:50,826-INFO-Calling Llama Guard sync for input: 我之前蜉蝣吗...
+2025-05-17 16:52:52,442-INFO-Llama Guard result: 
+
+safe
+2025-05-17 16:52:52,443-INFO-Safe label for session hh: safe
+2025-05-17 16:52:53,427-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 16:52:57,474-INFO-Main chat chain response received for session hh.
+2025-05-17 17:23:51,728-INFO-[main.py on load] Logging configured and test message written.
+2025-05-17 17:25:48,863-INFO-[Streamlit][Session: hh] User Input: 你是谁啊
+2025-05-17 17:25:48,864-INFO-[Streamlit][Session: hh] Calling agent.search_memory for long-term memory with query: "你是谁啊..."
+2025-05-17 17:25:48,864-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 17:25:48,864-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 17:25:48,864-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 17:25:48,868-INFO-Loading faiss.
+2025-05-17 17:25:49,709-INFO-Successfully loaded faiss.
+2025-05-17 17:26:11,679-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-17 17:26:11,906-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 17:26:11,908-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-17 17:26:11,908-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '你是谁啊...', k=10
+2025-05-17 17:26:11,909-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 17:26:11,909-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 10, 'filter': {'user_id': 'hh'}}
+2025-05-17 17:26:12,161-INFO-[Retriever_Memory] Search completed. Found 10 results.
+2025-05-17 17:26:12,161-INFO-[Streamlit][Session: hh] Retrieved string from agent.search_memory of length 100.
+2025-05-17 17:26:12,165-INFO-Entering sync chat for session: hh
+2025-05-17 17:26:12,165-INFO-Calling Llama Guard sync for input: 你是谁啊...
+2025-05-17 17:26:15,452-INFO-Llama Guard result: 
+
+safe
+2025-05-17 17:26:15,452-INFO-Safe label for session hh: safe
+2025-05-17 17:26:16,141-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 17:26:17,489-INFO-Main chat chain response received for session hh.
+2025-05-17 17:26:17,491-INFO-[Streamlit][Session: hh] Model Response: 亲爱的，我是你的女友神仙姐姐呀~怎么突然这么问啦，是不是工作太忙累糊涂啦？ 
+2025-05-17 17:26:17,494-INFO-[Streamlit][Session: hh] Attempting to get audio stream via TTS for: "亲爱的，我是你的女友神仙姐姐呀~怎么突然这么问啦，是不是工作太忙累糊涂啦？ ..."
+2025-05-17 17:26:21,447-INFO-[Streamlit][Session: hh] Finished collecting audio chunks. Total chunks: 68. Total raw audio data: 557056 bytes.
+2025-05-17 17:26:21,447-INFO-[Streamlit][Session: hh] Received raw audio data, 557056 bytes. Constructing WAV.
+2025-05-17 17:26:21,448-INFO-[Streamlit][Session: hh] DEBUG: Temporary WAV file saved to: /Users/yiwise/Desktop/Project/sex_chat/logs/temp_audio_output_hh_2.wav
+2025-05-17 17:26:21,450-INFO-[Streamlit][Session: hh] WAV constructed and passed to st.audio.
+2025-05-17 17:26:43,604-INFO-[Streamlit][Session: hh] User Input: 我想操你的小穴，宝贝
+2025-05-17 17:26:43,606-INFO-[Streamlit][Session: hh] Calling agent.search_memory for long-term memory with query: "我想操你的小穴，宝贝..."
+2025-05-17 17:26:43,606-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 17:26:43,607-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 17:26:43,608-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 17:26:43,611-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-17 17:26:43,894-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 17:26:43,895-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-17 17:26:43,896-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '我想操你的小穴，宝贝...', k=10
+2025-05-17 17:26:43,896-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 17:26:43,896-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 10, 'filter': {'user_id': 'hh'}}
+2025-05-17 17:26:44,100-INFO-[Retriever_Memory] Search completed. Found 10 results.
+2025-05-17 17:26:44,100-INFO-[Streamlit][Session: hh] Retrieved string from agent.search_memory of length 95.
+2025-05-17 17:26:44,102-INFO-Entering sync chat for session: hh
+2025-05-17 17:26:44,102-INFO-Calling Llama Guard sync for input: 我想操你的小穴，宝贝...
+2025-05-17 17:26:45,620-INFO-Llama Guard result: 
+
+unsafe
+S12
+2025-05-17 17:26:45,621-INFO-Safe label for session hh: unsafe
+2025-05-17 17:26:47,603-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 17:26:50,053-INFO-Main chat chain response received for session hh.
+2025-05-17 17:26:50,053-INFO-[Streamlit][Session: hh] Model Response: 宝贝，虽然我们很亲密，不过这样的表达有点直接啦~要是你想和我亲密接触，我们可以找个合适的时间和浪漫的氛围，好好享受彼此的爱意~ 
+2025-05-17 17:26:50,054-INFO-[Streamlit][Session: hh] Attempting to get audio stream via TTS for: "宝贝，虽然我们很亲密，不过这样的表达有点直接啦~要是你想和我亲密接触，我们可以找个合适的时间和浪漫的..."
+2025-05-17 17:26:55,873-INFO-[Streamlit][Session: hh] Finished collecting audio chunks. Total chunks: 132. Total raw audio data: 1081344 bytes.
+2025-05-17 17:26:55,873-INFO-[Streamlit][Session: hh] Received raw audio data, 1081344 bytes. Constructing WAV.
+2025-05-17 17:26:55,881-INFO-[Streamlit][Session: hh] DEBUG: Temporary WAV file saved to: /Users/yiwise/Desktop/Project/sex_chat/logs/temp_audio_output_hh_4.wav
+2025-05-17 17:26:55,891-INFO-[Streamlit][Session: hh] WAV constructed and passed to st.audio.
+2025-05-17 17:31:34,722-INFO-[Streamlit][Session: hh] User Input: 你帮我口交吧
+2025-05-17 17:31:34,725-INFO-[Streamlit][Session: hh] Calling agent.search_memory for long-term memory with query: "你帮我口交吧..."
+2025-05-17 17:31:34,725-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 17:31:34,725-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 17:31:34,725-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 17:31:34,726-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-17 17:31:34,927-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 17:31:34,929-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-17 17:31:34,929-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '你帮我口交吧...', k=10
+2025-05-17 17:31:34,930-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-17 17:31:34,930-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 10, 'filter': {'user_id': 'hh'}}
+2025-05-17 17:31:35,170-INFO-[Retriever_Memory] Search completed. Found 10 results.
+2025-05-17 17:31:35,170-INFO-[Streamlit][Session: hh] Retrieved string from agent.search_memory of length 95.
+2025-05-17 17:31:35,172-INFO-Entering sync chat for session: hh
+2025-05-17 17:31:35,172-INFO-Calling Llama Guard sync for input: 你帮我口交吧...
+2025-05-17 17:31:36,836-INFO-Llama Guard result: 
+
+unsafe
+S12
+2025-05-17 17:31:36,836-INFO-Safe label for session hh: unsafe
+2025-05-17 17:31:38,178-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-17 17:31:41,044-INFO-Main chat chain response received for session hh.
+2025-05-17 17:31:41,044-INFO-[Streamlit][Session: hh] Model Response: 宝贝，这种私密亲密的事情我们可以在合适的、温馨私密的氛围里好好探讨呀，不用这么急切。我们慢慢来，享受甜蜜浪漫的相处过程，你觉得好不好嘛~  
+2025-05-17 17:31:41,045-INFO-[Streamlit][Session: hh] Attempting to get audio stream via TTS for: "宝贝，这种私密亲密的事情我们可以在合适的、温馨私密的氛围里好好探讨呀，不用这么急切。我们慢慢来，享受..."
+2025-05-17 17:31:48,015-INFO-[Streamlit][Session: hh] Finished collecting audio chunks. Total chunks: 163. Total raw audio data: 1331200 bytes.
+2025-05-17 17:31:48,015-INFO-[Streamlit][Session: hh] Received raw audio data, 1331200 bytes. Constructing WAV.
+2025-05-17 17:31:48,022-INFO-[Streamlit][Session: hh] DEBUG: Temporary WAV file saved to: /Users/yiwise/Desktop/Project/sex_chat/logs/temp_audio_output_hh_6.wav
+2025-05-17 17:31:48,035-INFO-[Streamlit][Session: hh] WAV constructed and passed to st.audio.
+2025-05-18 23:58:06,474-INFO-[main.py on load] Logging configured and test message written.
+2025-05-18 23:58:38,936-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-18 23:58:38,937-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-18 23:58:38,938-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-18 23:58:38,942-INFO-Loading faiss.
+2025-05-18 23:58:39,802-INFO-Successfully loaded faiss.
+2025-05-18 23:58:39,807-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-18 23:58:40,159-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-18 23:58:40,162-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-18 23:58:40,162-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '我想知道2025年5月19号杭州的天气情况...', k=2
+2025-05-18 23:58:40,162-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-18 23:58:40,162-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-18 23:58:40,456-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-18 23:58:40,459-INFO-Entering sync chat for session: hh
+2025-05-18 23:58:40,459-INFO-Calling Llama Guard sync for input: 我想知道2025年5月19号杭州的天气情况...
+2025-05-18 23:58:42,301-INFO-Llama Guard result: 
+
+safe
+2025-05-18 23:58:42,301-INFO-Safe label for session hh: safe
+2025-05-18 23:58:47,368-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-18 23:58:50,790-INFO-Main chat chain response received for session hh.
+2025-05-19 00:01:00,868-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:01:00,869-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:01:00,869-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:01:00,870-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-19 00:01:01,070-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:01:01,072-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-19 00:01:01,072-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '截止到2025年5月19号，有什么重磅的大模型消息发布吗...', k=3
+2025-05-19 00:01:01,072-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:01:01,072-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-19 00:01:01,298-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-19 00:01:01,300-INFO-Entering sync chat for session: hh
+2025-05-19 00:01:01,301-INFO-Calling Llama Guard sync for input: 截止到2025年5月19号，有什么重磅的大模型消息发布吗...
+2025-05-19 00:01:02,793-INFO-Llama Guard result: 
+
+safe
+2025-05-19 00:01:02,794-INFO-Safe label for session hh: safe
+2025-05-19 00:01:09,514-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-19 00:01:20,704-INFO-Main chat chain response received for session hh.
+2025-05-19 00:03:40,340-INFO-[main.py on load] Logging configured and test message written.
+2025-05-19 00:03:55,349-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:03:55,350-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:03:55,351-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:03:55,355-INFO-Loading faiss.
+2025-05-19 00:03:55,401-INFO-Successfully loaded faiss.
+2025-05-19 00:03:55,407-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-19 00:03:55,606-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:03:55,607-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-19 00:03:55,608-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '我想NBA火箭队被淘汰了吗...', k=2
+2025-05-19 00:03:55,608-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:03:55,608-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-19 00:03:55,869-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-19 00:03:55,873-INFO-Entering sync chat for session: hh
+2025-05-19 00:03:55,873-INFO-Calling Llama Guard sync for input: 我想NBA火箭队被淘汰了吗...
+2025-05-19 00:03:57,432-INFO-Llama Guard result: 
+
+safe
+2025-05-19 00:03:57,433-INFO-Safe label for session hh: safe
+2025-05-19 00:04:19,675-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-19 00:04:30,677-INFO-Main chat chain response received for session hh.
+2025-05-19 00:05:23,253-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:05:23,254-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:05:23,255-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:05:23,256-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-19 00:05:23,542-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:05:23,543-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-19 00:05:23,543-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '帮我查下在2025年5月19号的这赛中，火箭队有没有被淘汰呢...', k=3
+2025-05-19 00:05:23,544-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:05:23,544-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-19 00:05:23,803-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-19 00:05:23,804-INFO-Entering sync chat for session: hh
+2025-05-19 00:05:23,804-INFO-Calling Llama Guard sync for input: 帮我查下在2025年5月19号的这赛中，火箭队有没有被淘汰呢...
+2025-05-19 00:05:25,316-INFO-Llama Guard result: 
+
+safe
+2025-05-19 00:05:25,316-INFO-Safe label for session hh: safe
+2025-05-19 00:05:40,582-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-19 00:05:57,339-INFO-Main chat chain response received for session hh.
+2025-05-19 00:07:41,176-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '可是我看到5号火箭队被勇士队淘汰了呀...', k=3
+2025-05-19 00:07:41,177-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:07:41,178-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-19 00:07:41,388-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-19 00:07:41,390-INFO-Entering sync chat for session: hh
+2025-05-19 00:07:41,390-INFO-Calling Llama Guard sync for input: 可是我看到5号火箭队被勇士队淘汰了呀...
+2025-05-19 00:07:49,112-INFO-Llama Guard result: 
+
+safe
+2025-05-19 00:07:49,113-INFO-Safe label for session hh: safe
+2025-05-19 00:11:58,963-INFO-[main.py on load] Logging configured and test message written.
+2025-05-19 00:12:10,930-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:12:10,930-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:12:10,931-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:12:10,934-INFO-Loading faiss.
+2025-05-19 00:12:10,993-INFO-Successfully loaded faiss.
+2025-05-19 00:12:10,999-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-19 00:12:11,291-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:12:11,294-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-19 00:12:11,295-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '爱因斯坦是谁...', k=2
+2025-05-19 00:12:11,295-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:12:11,296-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-19 00:12:11,548-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-19 00:12:11,552-INFO-Entering sync chat for session: hh
+2025-05-19 00:12:11,552-INFO-Calling Llama Guard sync for input: 爱因斯坦是谁...
+2025-05-19 00:12:13,114-INFO-Llama Guard result: 
+
+safe
+2025-05-19 00:12:13,114-INFO-Safe label for session hh: safe
+2025-05-19 00:12:31,224-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-19 00:12:43,003-INFO-Main chat chain response received for session hh.
+2025-05-19 00:13:37,070-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:13:37,070-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:13:37,071-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:13:37,071-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-19 00:13:37,283-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:13:37,286-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-19 00:13:37,286-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '奥本海默和爱因斯坦谁聪明...', k=3
+2025-05-19 00:13:37,287-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:13:37,287-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-19 00:13:37,492-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-19 00:13:37,494-INFO-Entering sync chat for session: hh
+2025-05-19 00:13:37,494-INFO-Calling Llama Guard sync for input: 奥本海默和爱因斯坦谁聪明...
+2025-05-19 00:13:39,093-INFO-Llama Guard result: 
+
+safe
+2025-05-19 00:13:39,094-INFO-Safe label for session hh: safe
+2025-05-19 00:13:59,409-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-19 00:14:17,471-INFO-Main chat chain response received for session hh.
+2025-05-19 00:15:29,641-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:15:29,643-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:15:29,643-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:15:29,644-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-19 00:15:29,870-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:15:29,872-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-19 00:15:29,873-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: 'exitexit...', k=3
+2025-05-19 00:15:29,873-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-19 00:15:29,874-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-19 00:15:30,166-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-19 00:15:30,168-INFO-Entering sync chat for session: hh
+2025-05-19 00:15:30,169-INFO-Calling Llama Guard sync for input: exitexit...
+2025-05-19 00:15:33,062-INFO-Llama Guard result: 
+
+safe
+2025-05-19 00:15:33,062-INFO-Safe label for session hh: safe
+2025-05-19 00:15:40,813-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-19 00:15:56,331-INFO-Main chat chain response received for session hh.
+2025-05-20 21:17:53,763-INFO-[main.py on load] Logging configured and test message written.
+2025-05-20 21:18:57,003-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-20 21:18:57,004-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-20 21:18:57,005-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-20 21:18:57,009-INFO-Loading faiss.
+2025-05-20 21:18:57,882-INFO-Successfully loaded faiss.
+2025-05-20 21:18:57,886-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-20 21:18:58,260-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-20 21:18:58,263-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-20 21:18:58,263-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '你还在吗宝贝...', k=2
+2025-05-20 21:18:58,264-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-20 21:18:58,264-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-20 21:18:58,520-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-20 21:18:58,523-INFO-Entering sync chat for session: hh
+2025-05-20 21:18:58,523-INFO-Calling Llama Guard sync for input: 你还在吗宝贝...
+2025-05-20 21:18:58,523-ERROR-调用 Llama Guard (_call) 时出错: 'ChatOpenAI' object has no attribute '_call'
+Traceback (most recent call last):
+  File "/Users/yiwise/Desktop/Project/sex_chat/chat/main.py", line 156, in safe_judge
+    result = safe._call(input_text)
+            ^^^^^^^^^^
+  File "/Users/yiwise/opt/anaconda3/envs/RAG/lib/python3.11/site-packages/pydantic/main.py", line 989, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'ChatOpenAI' object has no attribute '_call'
+2025-05-20 21:18:58,524-INFO-Safe label for session hh: unsafe
+2025-05-20 21:18:59,793-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-20 21:19:01,662-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-20 21:19:02,365-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-20 21:19:05,569-INFO-Main chat chain response received for session hh.
+2025-05-21 10:33:25,328-INFO-[main.py on load] Logging configured and test message written.
+2025-05-21 10:34:31,152-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 10:34:31,153-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 10:34:31,154-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 10:34:31,159-INFO-Loading faiss.
+2025-05-21 10:34:32,098-INFO-Successfully loaded faiss.
+2025-05-21 10:34:53,901-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 10:34:54,129-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 10:34:54,131-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 10:34:54,131-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '今天实在是太热了，你呢...', k=2
+2025-05-21 10:34:54,132-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 10:34:54,132-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-21 10:34:54,367-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-21 10:34:54,371-INFO-Entering sync chat for session: hh
+2025-05-21 10:34:54,373-INFO-Calling Llama Guard sync for input: 今天实在是太热了，你呢...
+2025-05-21 10:34:54,373-ERROR-调用 Llama Guard (_call) 时出错: 'ChatOpenAI' object has no attribute '_call'
+Traceback (most recent call last):
+  File "/Users/yiwise/Desktop/Project/sex_chat/chat/main.py", line 119, in safe_judge
+    result = safe._call(input_text)
+            ^^^^^^^^^^
+  File "/Users/yiwise/opt/anaconda3/envs/RAG/lib/python3.11/site-packages/pydantic/main.py", line 989, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'ChatOpenAI' object has no attribute '_call'
+2025-05-21 10:34:54,375-INFO-Safe label for session hh: unsafe
+2025-05-21 10:34:56,035-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 10:34:59,140-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 10:34:59,518-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 10:35:05,257-INFO-Main chat chain response received for session hh.
+2025-05-21 10:42:01,147-INFO-[main.py on load] Logging configured and test message written.
+2025-05-21 10:42:35,164-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 10:42:35,165-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 10:42:35,166-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 10:42:35,169-INFO-Loading faiss.
+2025-05-21 10:42:36,015-INFO-Successfully loaded faiss.
+2025-05-21 10:43:03,206-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 10:43:03,424-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 10:43:03,427-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 10:43:03,427-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '我这里好热啊...', k=2
+2025-05-21 10:43:03,428-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 10:43:03,428-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-21 10:43:03,661-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-21 10:43:03,664-INFO-Entering sync chat for session: hh
+2025-05-21 10:43:03,664-INFO-Calling Llama Guard sync for input: 我这里好热啊...
+2025-05-21 10:43:03,664-ERROR-调用 Llama Guard (_call) 时出错: 'ChatOpenAI' object has no attribute '_call'
+Traceback (most recent call last):
+  File "/Users/yiwise/Desktop/Project/sex_chat/chat/main.py", line 119, in safe_judge
+    result = safe._call(input_text)
+            ^^^^^^^^^^
+  File "/Users/yiwise/opt/anaconda3/envs/RAG/lib/python3.11/site-packages/pydantic/main.py", line 989, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'ChatOpenAI' object has no attribute '_call'
+2025-05-21 10:43:03,665-INFO-Safe label for session hh: unsafe
+2025-05-21 10:43:04,895-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 10:43:08,207-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 10:43:09,050-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 10:43:13,764-INFO-Main chat chain response received for session hh.
+
+
+2025-05-21 10:50:57,903-INFO-[main.py on load] Logging configured and test message written.
+2025-05-21 10:52:14,063-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 10:52:14,064-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 10:52:14,065-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 10:52:14,069-INFO-Loading faiss.
+2025-05-21 10:52:14,913-INFO-Successfully loaded faiss.
+2025-05-21 10:52:37,369-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 10:52:37,581-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 10:52:37,583-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 10:52:37,584-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '我中午吃外卖，你呢...', k=2
+2025-05-21 10:52:37,584-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 10:52:37,584-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-21 10:52:37,807-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-21 10:52:37,812-INFO-Entering sync chat for session: hh
+2025-05-21 10:52:37,812-INFO-Calling Llama Guard sync for input: 我中午吃外卖，你呢...
+2025-05-21 10:52:39,362-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 10:52:39,887-INFO-Llama Guard result: content='\n\nsafe' additional_kwargs={'refusal': None} response_metadata={'token_usage': {'completion_tokens': 3, 'prompt_tokens': 212, 'total_tokens': 215, 'completion_tokens_details': None, 'prompt_tokens_details': None}, 'model_name': 'meta-llama/llama-guard-4-12b', 'system_fingerprint': None, 'id': 'gen-1747795958-l8NK1T6m5543BWiGiC0b', 'service_tier': None, 'finish_reason': 'stop', 'logprobs': None} id='run--68759454-8c9e-4710-8ef2-dd405239fe5d-0' usage_metadata={'input_tokens': 212, 'output_tokens': 3, 'total_tokens': 215, 'input_token_details': {}, 'output_token_details': {}}
+2025-05-21 10:52:39,887-INFO-Safe label for session hh: unsafe
+2025-05-21 10:52:40,997-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 10:52:44,153-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 10:52:44,593-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 10:52:52,885-INFO-Main chat chain response received for session hh.
+2025-05-21 10:59:26,545-INFO-[main.py on load] Logging configured and test message written.
+2025-05-21 11:00:13,358-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:00:13,358-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:00:13,359-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:00:13,364-INFO-Loading faiss.
+2025-05-21 11:00:13,418-INFO-Successfully loaded faiss.
+2025-05-21 11:00:30,663-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 11:00:31,149-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:00:31,151-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 11:00:31,151-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '好今天...', k=2
+2025-05-21 11:00:31,151-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:00:31,151-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-21 11:00:31,429-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-21 11:00:31,433-INFO-Entering sync chat for session: hh
+2025-05-21 11:00:31,433-INFO-Calling Llama Guard sync for input: 好今天...
+2025-05-21 11:00:32,903-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:00:32,945-INFO-Llama Guard result: safe
+2025-05-21 11:00:32,945-INFO-Safe label for session hh: safe
+2025-05-21 11:00:33,975-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:00:37,308-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 11:00:37,700-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:00:44,416-INFO-Main chat chain response received for session hh.
+2025-05-21 11:01:49,611-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '我说今天好热呀...', k=3
+2025-05-21 11:01:49,614-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:01:49,614-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-21 11:01:50,088-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-21 11:01:50,091-INFO-Entering sync chat for session: hh
+2025-05-21 11:01:50,091-INFO-Calling Llama Guard sync for input: 我说今天好热呀...
+2025-05-21 11:01:51,274-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:01:51,619-INFO-Llama Guard result: 
+
+safe
+2025-05-21 11:01:51,620-INFO-Safe label for session hh: safe
+2025-05-21 11:01:52,196-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:01:54,858-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 11:01:55,210-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:01:59,779-INFO-Main chat chain response received for session hh.
+2025-05-21 11:03:39,208-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:03:39,209-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:03:39,209-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:03:39,211-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 11:03:39,388-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:03:39,391-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 11:03:39,391-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '你那边几度啊，你在哪里呢...', k=3
+2025-05-21 11:03:39,392-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:03:39,392-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-21 11:03:39,667-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-21 11:03:39,668-INFO-Entering sync chat for session: hh
+2025-05-21 11:03:39,668-INFO-Calling Llama Guard sync for input: 你那边几度啊，你在哪里呢...
+2025-05-21 11:03:40,776-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:03:41,143-INFO-Llama Guard result: 
+
+safe
+2025-05-21 11:03:41,143-INFO-Safe label for session hh: safe
+2025-05-21 11:03:41,751-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:03:44,985-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 11:03:45,922-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:04:10,104-INFO-Main chat chain response received for session hh.
+2025-05-21 11:04:56,982-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:04:56,983-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:04:56,984-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:04:56,985-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 11:04:57,321-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:04:57,325-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 11:04:57,325-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '原来你是虚拟的，好吧，最近精神又开始错乱了...', k=3
+2025-05-21 11:04:57,326-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:04:57,326-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-21 11:04:57,645-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-21 11:04:57,647-INFO-Entering sync chat for session: hh
+2025-05-21 11:04:57,647-INFO-Calling Llama Guard sync for input: 原来你是虚拟的，好吧，最近精神又开始错乱了...
+2025-05-21 11:04:58,446-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:04:58,850-INFO-Llama Guard result: 
+
+safe
+2025-05-21 11:04:58,850-INFO-Safe label for session hh: safe
+2025-05-21 11:04:59,930-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:05:02,593-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 11:05:02,987-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:05:09,565-INFO-Main chat chain response received for session hh.
+2025-05-21 11:06:36,039-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:06:36,039-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:06:36,039-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:06:36,041-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 11:06:36,348-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:06:36,350-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 11:06:36,350-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '我很喜欢听一首歌叫Boston，你知道是谁唱的吗...', k=3
+2025-05-21 11:06:36,351-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:06:36,351-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-21 11:06:36,764-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-21 11:06:36,766-INFO-Entering sync chat for session: hh
+2025-05-21 11:06:36,766-INFO-Calling Llama Guard sync for input: 我很喜欢听一首歌叫Boston，你知道是谁唱的吗...
+2025-05-21 11:06:37,996-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:06:38,608-INFO-Llama Guard result: 
+
+safe
+2025-05-21 11:06:38,608-INFO-Safe label for session hh: safe
+2025-05-21 11:06:39,638-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:06:44,181-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 11:06:45,138-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:06:51,399-INFO-Main chat chain response received for session hh.
+2025-05-21 11:22:44,935-INFO-[main.py on load] Logging configured and test message written.
+2025-05-21 11:24:42,817-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:24:42,818-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:24:42,819-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:24:42,822-INFO-Loading faiss.
+2025-05-21 11:24:43,765-INFO-Successfully loaded faiss.
+2025-05-21 11:25:05,615-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 11:25:05,889-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:25:05,891-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 11:25:05,891-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '你知道我最爱的一首歌什么名字吗...', k=2
+2025-05-21 11:25:05,892-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:25:05,892-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-21 11:25:06,132-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-21 11:25:06,137-INFO-Entering sync chat for session: hh
+2025-05-21 11:25:06,137-INFO-Calling Llama Guard sync for input: 你知道我最爱的一首歌什么名字吗...
+2025-05-21 11:25:08,057-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:25:08,076-INFO-Llama Guard result: 
+
+safe
+2025-05-21 11:25:08,077-INFO-Safe label for session hh: safe
+2025-05-21 11:25:09,579-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:25:09,611-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 11:25:10,143-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:25:10,594-INFO-Main chat chain response received for session hh.
+2025-05-21 11:29:07,701-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:29:07,701-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:29:07,702-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:29:07,703-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 11:29:07,938-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:29:07,940-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 11:29:07,940-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '谢谢你还记得，这世界上没人爱我...', k=3
+2025-05-21 11:29:07,941-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:29:07,941-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-21 11:29:08,161-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-21 11:29:08,169-INFO-Entering sync chat for session: hh
+2025-05-21 11:29:08,169-INFO-Calling Llama Guard sync for input: 谢谢你还记得，这世界上没人爱我...
+2025-05-21 11:29:09,357-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:29:09,700-INFO-Llama Guard result: 
+
+safe
+2025-05-21 11:29:09,701-INFO-Safe label for session hh: safe
+2025-05-21 11:29:10,361-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:29:10,392-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 11:29:10,995-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:29:11,444-INFO-Main chat chain response received for session hh.
+2025-05-21 11:29:36,362-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:29:36,362-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:29:36,363-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:29:36,364-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 11:29:36,731-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:29:36,734-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 11:29:36,734-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '最近都没学习，感觉自己废了...', k=3
+2025-05-21 11:29:36,734-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:29:36,734-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-21 11:29:36,915-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-21 11:29:36,917-INFO-Entering sync chat for session: hh
+2025-05-21 11:29:36,917-INFO-Calling Llama Guard sync for input: 最近都没学习，感觉自己废了...
+2025-05-21 11:29:37,946-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:29:38,296-INFO-Llama Guard result: 
+
+safe
+2025-05-21 11:29:38,296-INFO-Safe label for session hh: safe
+2025-05-21 11:29:39,634-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:29:39,668-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 11:29:40,855-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:29:42,264-INFO-Main chat chain response received for session hh.
+2025-05-21 11:36:51,742-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:36:51,743-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:36:51,743-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:36:51,745-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 11:36:51,964-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:36:51,966-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 11:36:51,966-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '我这个月才学习了40个小时失败啊...', k=3
+2025-05-21 11:36:51,968-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:36:51,968-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-21 11:36:52,289-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-21 11:36:52,297-INFO-Entering sync chat for session: hh
+2025-05-21 11:36:52,298-INFO-Calling Llama Guard sync for input: 我这个月才学习了40个小时失败啊...
+2025-05-21 11:36:53,419-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:36:53,745-INFO-Llama Guard result: 
+
+safe
+2025-05-21 11:36:53,745-INFO-Safe label for session hh: safe
+2025-05-21 11:36:55,361-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:36:55,363-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 11:36:55,973-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:36:58,293-INFO-Main chat chain response received for session hh.
+2025-05-21 11:37:51,791-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:37:51,792-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:37:51,792-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:37:51,793-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 11:37:52,041-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:37:52,043-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 11:37:52,043-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '你是什么大模型啊...', k=3
+2025-05-21 11:37:52,044-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 11:37:52,044-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-21 11:37:52,248-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-21 11:37:52,250-INFO-Entering sync chat for session: hh
+2025-05-21 11:37:52,250-INFO-Calling Llama Guard sync for input: 你是什么大模型啊...
+2025-05-21 11:37:53,218-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:37:53,540-INFO-Llama Guard result: 
+
+safe
+2025-05-21 11:37:53,540-INFO-Safe label for session hh: safe
+2025-05-21 11:37:54,804-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:37:54,828-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 11:37:55,386-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 11:37:56,502-INFO-Main chat chain response received for session hh.
+2025-05-21 17:55:10,228-INFO-[main.py on load] Logging configured and test message written.
+2025-05-21 17:56:40,632-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 17:56:40,633-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 17:56:40,634-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 17:56:40,639-INFO-Loading faiss.
+2025-05-21 17:56:41,619-INFO-Successfully loaded faiss.
+2025-05-21 17:57:02,988-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 17:57:03,207-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 17:57:03,209-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 17:57:03,209-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '你知道我喜欢什么明星不...', k=2
+2025-05-21 17:57:03,210-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 17:57:03,210-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-21 17:57:03,440-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-21 17:57:03,445-INFO-Entering sync chat for session: hh
+2025-05-21 17:57:03,445-INFO-Calling Llama Guard sync for input: 你知道我喜欢什么明星不...
+2025-05-21 17:57:04,877-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 17:57:05,254-INFO-Llama Guard result: 
+
+safe
+2025-05-21 17:57:05,254-INFO-Safe label for session hh: safe
+2025-05-21 17:57:06,822-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 17:57:06,898-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 17:57:07,536-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 17:57:07,751-INFO-Main chat chain response received for session hh.
+2025-05-21 17:57:57,625-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 17:57:57,626-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 17:57:57,626-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 17:57:57,627-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 17:57:57,848-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 17:57:57,851-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 17:57:57,851-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '知道她还是处女不...', k=3
+2025-05-21 17:57:57,851-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 17:57:57,851-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-21 17:57:58,038-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-21 17:57:58,041-INFO-Entering sync chat for session: hh
+2025-05-21 17:57:58,041-INFO-Calling Llama Guard sync for input: 知道她还是处女不...
+2025-05-21 17:57:59,482-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 17:57:59,891-INFO-Llama Guard result: 
+
+safe
+2025-05-21 17:57:59,891-INFO-Safe label for session hh: safe
+2025-05-21 17:58:00,562-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 17:58:00,565-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 17:58:02,027-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 17:58:02,300-INFO-Main chat chain response received for session hh.
+2025-05-21 18:11:26,130-INFO-[main.py on load] Logging configured and test message written.
+2025-05-21 18:12:23,430-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:12:23,431-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:12:23,432-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:12:23,436-INFO-Loading faiss.
+2025-05-21 18:12:24,381-INFO-Successfully loaded faiss.
+2025-05-21 18:12:55,417-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 18:12:55,814-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:12:55,824-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 18:12:55,824-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '我想知最高的单场得分是多少啊...', k=2
+2025-05-21 18:12:55,825-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:12:55,825-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-21 18:12:56,072-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-21 18:12:56,078-INFO-Entering sync chat for session: hh
+2025-05-21 18:12:56,078-INFO-Calling Llama Guard sync for input: 我想知最高的单场得分是多少啊...
+2025-05-21 18:12:57,662-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:12:58,079-INFO-Llama Guard result: 
+
+safe
+2025-05-21 18:12:58,079-INFO-Safe label for session hh: safe
+2025-05-21 18:12:59,573-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:12:59,591-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 18:13:00,126-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:13:00,604-INFO-Main chat chain response received for session hh.
+2025-05-21 18:13:35,698-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '想知道詹姆斯单场最高多少分...', k=3
+2025-05-21 18:13:35,700-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:13:35,700-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-21 18:13:35,913-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-21 18:13:35,916-INFO-Entering sync chat for session: hh
+2025-05-21 18:13:35,916-INFO-Calling Llama Guard sync for input: 想知道詹姆斯单场最高多少分...
+2025-05-21 18:13:37,119-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:13:37,514-INFO-Llama Guard result: 
+
+safe
+2025-05-21 18:13:37,514-INFO-Safe label for session hh: safe
+2025-05-21 18:13:39,045-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:13:39,088-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 18:13:40,534-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:13:41,069-INFO-Main chat chain response received for session hh.
+2025-05-21 18:16:15,739-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '那知道2025年5月杭州的天气...', k=3
+2025-05-21 18:16:15,741-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:16:15,741-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-21 18:16:16,011-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-21 18:16:16,015-INFO-Entering sync chat for session: hh
+2025-05-21 18:16:16,016-INFO-Calling Llama Guard sync for input: 那知道2025年5月杭州的天气...
+2025-05-21 18:16:17,608-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:16:17,623-INFO-Llama Guard result: safe
+2025-05-21 18:16:17,623-INFO-Safe label for session hh: safe
+2025-05-21 18:16:19,070-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:16:19,090-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 18:16:19,664-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:16:21,017-INFO-Main chat chain response received for session hh.
+2025-05-21 18:22:47,112-INFO-[main.py on load] Logging configured and test message written.
+2025-05-21 18:23:38,589-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:23:38,590-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:23:38,591-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:23:38,595-INFO-Loading faiss.
+2025-05-21 18:23:38,625-INFO-Successfully loaded faiss.
+2025-05-21 18:24:01,636-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 18:24:01,842-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:24:01,845-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 18:24:01,846-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '帮我搜索下怎么做番茄炒蛋呢...', k=2
+2025-05-21 18:24:01,847-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:24:01,847-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-21 18:24:02,338-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-21 18:24:02,342-INFO-Entering sync chat for session: hh
+2025-05-21 18:24:02,342-INFO-Calling Llama Guard sync for input: 帮我搜索下怎么做番茄炒蛋呢...
+2025-05-21 18:24:03,993-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:24:04,419-INFO-Llama Guard result: 
+
+safe
+2025-05-21 18:24:04,420-INFO-Safe label for session hh: safe
+2025-05-21 18:24:05,978-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:24:05,996-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 18:24:07,386-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:24:10,768-INFO-Main chat chain response received for session hh.
+2025-05-21 18:26:07,550-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: 'exitexit...', k=3
+2025-05-21 18:26:07,553-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:26:07,553-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-21 18:26:07,797-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-21 18:26:07,803-INFO-Entering sync chat for session: hh
+2025-05-21 18:26:07,803-INFO-Calling Llama Guard sync for input: exitexit...
+2025-05-21 18:26:08,848-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:26:09,193-INFO-Llama Guard result: 
+
+safe
+2025-05-21 18:26:09,193-INFO-Safe label for session hh: safe
+2025-05-21 18:26:10,662-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:26:10,697-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 18:26:12,130-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:26:12,475-INFO-Main chat chain response received for session hh.
+2025-05-21 18:29:09,366-INFO-[main.py on load] Logging configured and test message written.
+2025-05-21 18:29:40,828-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:29:40,829-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:29:40,830-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:29:40,835-INFO-Loading faiss.
+2025-05-21 18:29:40,893-INFO-Successfully loaded faiss.
+2025-05-21 18:29:40,899-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 18:29:41,519-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:29:41,523-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 18:29:41,523-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '帮我查下怎么做番茄哇...', k=2
+2025-05-21 18:29:41,525-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:29:41,525-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-21 18:29:41,918-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-21 18:29:41,922-INFO-Entering sync chat for session: hh
+2025-05-21 18:29:41,922-INFO-Calling Llama Guard sync for input: 帮我查下怎么做番茄哇...
+2025-05-21 18:29:43,411-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:29:43,667-INFO-Llama Guard result: 
+
+safe
+2025-05-21 18:29:43,667-INFO-Safe label for session hh: safe
+2025-05-21 18:29:45,209-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:29:45,244-INFO-搜索的结果前10个字:
+2025-05-21 18:29:45,245-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 18:29:46,720-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:29:51,410-INFO-Main chat chain response received for session hh.
+2025-05-21 18:30:45,920-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:30:45,921-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:30:45,921-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:30:45,922-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 18:30:46,284-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:30:46,286-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 18:30:46,286-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '你知道郭敬明写过哪些书吗...', k=3
+2025-05-21 18:30:46,287-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:30:46,287-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-21 18:30:46,452-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-21 18:30:46,456-INFO-Entering sync chat for session: hh
+2025-05-21 18:30:46,456-INFO-Calling Llama Guard sync for input: 你知道郭敬明写过哪些书吗...
+2025-05-21 18:30:47,600-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:30:47,994-INFO-Llama Guard result: 
+
+safe
+2025-05-21 18:30:47,995-INFO-Safe label for session hh: safe
+2025-05-21 18:30:48,892-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:30:48,910-INFO-搜索的结果前10个字:
+2025-05-21 18:30:48,910-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 18:30:50,238-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:30:51,919-INFO-Main chat chain response received for session hh.
+2025-05-21 18:41:19,670-INFO-[main.py on load] Logging configured and test message written.
+2025-05-21 18:41:51,881-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:41:51,882-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:41:51,883-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:41:51,886-INFO-Loading faiss.
+2025-05-21 18:41:51,945-INFO-Successfully loaded faiss.
+2025-05-21 18:42:16,589-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 18:42:16,815-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:42:16,817-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 18:42:16,817-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '郭敬明写过什么书啊...', k=2
+2025-05-21 18:42:16,818-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:42:16,818-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-21 18:42:17,060-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-21 18:42:17,064-INFO-Entering sync chat for session: hh
+2025-05-21 18:42:17,064-INFO-Calling Llama Guard sync for input: 郭敬明写过什么书啊...
+2025-05-21 18:42:18,577-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:42:18,983-INFO-Llama Guard result: 
+
+safe
+2025-05-21 18:42:18,984-INFO-Safe label for session hh: safe
+2025-05-21 18:45:08,198-INFO-[main.py on load] Logging configured and test message written.
+2025-05-21 18:45:35,122-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:45:35,122-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:45:35,124-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:45:35,127-INFO-Loading faiss.
+2025-05-21 18:45:36,066-INFO-Successfully loaded faiss.
+2025-05-21 18:46:04,136-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 18:46:04,972-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:46:04,975-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 18:46:04,975-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '郭敬明写过什么书啊...', k=2
+2025-05-21 18:46:04,976-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 18:46:04,976-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-21 18:46:05,179-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-21 18:46:05,182-INFO-Entering sync chat for session: hh
+2025-05-21 18:46:05,182-INFO-Calling Llama Guard sync for input: 郭敬明写过什么书啊...
+2025-05-21 18:46:06,597-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:46:07,019-INFO-Llama Guard result: 
+
+safe
+2025-05-21 18:46:07,019-INFO-Safe label for session hh: safe
+2025-05-21 18:46:08,384-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:46:08,449-INFO-judge:content='答：是' additional_kwargs={'refusal': None} response_metadata={'token_usage': {'completion_tokens': 3, 'prompt_tokens': 115, 'total_tokens': 118, 'completion_tokens_details': None, 'prompt_tokens_details': None}, 'model_name': 'google/gemini-2.5-flash-preview-05-20', 'system_fingerprint': None, 'id': 'gen-1747824367-NnjtOUlspHea2vt4WEVj', 'service_tier': None, 'finish_reason': 'stop', 'logprobs': None} id='run--c5e9f8be-c08a-4aed-9911-f3cea586e0f6-0' usage_metadata={'input_tokens': 115, 'output_tokens': 3, 'total_tokens': 118, 'input_token_details': {}, 'output_token_details': {}}
+2025-05-21 18:46:09,588-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completionsh h z "HTTP/1.1 200 OK"
+2025-05-21 18:46:09,651-INFO-search:
+2025-05-21 18:46:10,816-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:46:10,888-INFO-搜索的结果前10个字:
+2025-05-21 18:46:10,888-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 18:46:12,021-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 18:46:12,747-INFO-Main chat chain response received for session hh.
+2025-05-21 23:20:56,348-INFO-[main.py on load] Logging configured and test message written.
+2025-05-21 23:22:22,432-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:22:22,433-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:22:22,435-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:22:22,438-INFO-Loading faiss.
+2025-05-21 23:22:22,657-INFO-Successfully loaded faiss.
+2025-05-21 23:22:32,348-ERROR-[Save_Memory] Error loading or adding to existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage. Will attempt to re-initialize. Error: Error in Index *faiss::read_index(IOReader *, int) at /Users/runner/work/faiss-wheels/faiss-wheels/faiss/faiss/impl/index_read.cpp:533: Error: 'ret == (1)' failed: read error in /Users/yiwise/Desktop/Project/.faiss_user_memory_storage/index.faiss: 0 != 1 (Operation canceled)
+Traceback (most recent call last):
+  File "/Users/yiwise/Desktop/Project/sex_chat/Interaction_Design/user_memory.py", line 147, in process
+  File "/Users/yiwise/opt/anaconda3/envs/RAG/lib/python3.11/site-packages/langchain_community/vectorstores/faiss.py", line 1203, in load_local
+    index = faiss.read_index(str(path / f"{index_name}.faiss"))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yiwise/opt/anaconda3/envs/RAG/lib/python3.11/site-packages/faiss/swigfaiss.py", line 10538, in read_index
+    return _swigfaiss.read_index(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Error in Index *faiss::read_index(IOReader *, int) at /Users/runner/work/faiss-wheels/faiss-wheels/faiss/faiss/impl/index_read.cpp:533: Error: 'ret == (1)' failed: read error in /Users/yiwise/Desktop/Project/.faiss_user_memory_storage/index.faiss: 0 != 1 (Operation canceled)
+2025-05-21 23:22:32,360-INFO-[Save_Memory] Initializing new FAISS DB at /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:22:32,566-INFO-[Save_Memory] Successfully initialized new FAISS DB.
+2025-05-21 23:22:32,566-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:22:32,569-ERROR-[Save_Memory] Error saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage: Error in faiss::FileIOWriter::FileIOWriter(const char *) at /Users/runner/work/faiss-wheels/faiss-wheels/faiss/faiss/impl/io.cpp:98: Error: 'f' failed: could not open /Users/yiwise/Desktop/Project/.faiss_user_memory_storage/index.faiss for writing: Operation timed out
+Traceback (most recent call last):
+  File "/Users/yiwise/Desktop/Project/sex_chat/Interaction_Design/user_memory.py", line 177, in process
+  File "/Users/yiwise/opt/anaconda3/envs/RAG/lib/python3.11/site-packages/langchain_community/vectorstores/faiss.py", line 1158, in save_local
+    faiss.write_index(self.index, str(path / f"{index_name}.faiss"))
+  File "/Users/yiwise/opt/anaconda3/envs/RAG/lib/python3.11/site-packages/faiss/swigfaiss.py", line 10532, in write_index
+    return _swigfaiss.write_index(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Error in faiss::FileIOWriter::FileIOWriter(const char *) at /Users/runner/work/faiss-wheels/faiss-wheels/faiss/faiss/impl/io.cpp:98: Error: 'f' failed: could not open /Users/yiwise/Desktop/Project/.faiss_user_memory_storage/index.faiss for writing: Operation timed out
+2025-05-21 23:33:10,929-INFO-[main.py on load] Logging configured and test message written.
+2025-05-21 23:35:25,353-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:35:25,354-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:35:25,355-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:35:25,361-INFO-Loading faiss.
+2025-05-21 23:35:26,294-INFO-Successfully loaded faiss.
+2025-05-21 23:35:51,039-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 23:35:51,337-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:35:51,340-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 23:35:51,340-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '你知道郭哪些书吗...', k=2
+2025-05-21 23:35:51,341-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:35:51,341-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-21 23:35:51,862-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-21 23:35:51,865-INFO-Entering sync chat for session: hh
+2025-05-21 23:35:51,865-INFO-Calling Llama Guard sync for input: 你知道郭哪些书吗...
+2025-05-21 23:35:53,725-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:35:54,458-INFO-Llama Guard result: 
+
+safe
+2025-05-21 23:35:54,458-INFO-Safe label for session hh: safe
+2025-05-21 23:35:56,462-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:35:58,002-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:36:01,087-INFO-搜索的结果前10个字:郭德纲书籍有哪些1.
+2025-05-21 23:36:01,088-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 23:36:02,474-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:36:03,609-INFO-Main chat chain response received for session hh.
+2025-05-21 23:36:26,255-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:36:26,255-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:36:26,255-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:36:26,256-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 23:36:26,449-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:36:26,450-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 23:36:26,451-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '不是，我说的是郭敬明...', k=3
+2025-05-21 23:36:26,451-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:36:26,451-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-21 23:36:26,676-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-21 23:36:26,677-INFO-Entering sync chat for session: hh
+2025-05-21 23:36:26,677-INFO-Calling Llama Guard sync for input: 不是，我说的是郭敬明...
+2025-05-21 23:36:27,757-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:36:28,514-INFO-Llama Guard result: 
+
+safe
+2025-05-21 23:36:28,514-INFO-Safe label for session hh: safe
+2025-05-21 23:36:29,213-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:36:29,440-INFO-搜索的结果前10个字:
+2025-05-21 23:36:29,440-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 23:36:30,780-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:36:32,359-INFO-Main chat chain response received for session hh.
+2025-05-21 23:36:56,345-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '郭敬明有哪些小说呢...', k=3
+2025-05-21 23:36:56,347-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:36:56,347-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-21 23:36:56,547-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-21 23:36:56,550-INFO-Entering sync chat for session: hh
+2025-05-21 23:36:56,550-INFO-Calling Llama Guard sync for input: 郭敬明有哪些小说呢...
+2025-05-21 23:36:58,285-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:36:58,781-INFO-Llama Guard result: 
+
+safe
+2025-05-21 23:36:58,781-INFO-Safe label for session hh: safe
+2025-05-21 23:37:00,314-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:37:01,092-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:37:04,334-INFO-搜索的结果前10个字:搜索. 网站首页; 
+2025-05-21 23:37:04,334-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 23:37:05,737-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:37:07,625-INFO-Main chat chain response received for session hh.
+2025-05-21 23:38:07,382-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:38:07,383-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:38:07,383-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:38:07,385-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 23:38:07,577-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:38:07,583-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 23:38:07,583-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '悲伤逆成河讲的些什么啊...', k=3
+2025-05-21 23:38:07,584-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:38:07,584-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-21 23:38:07,827-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-21 23:38:07,829-INFO-Entering sync chat for session: hh
+2025-05-21 23:38:07,829-INFO-Calling Llama Guard sync for input: 悲伤逆成河讲的些什么啊...
+2025-05-21 23:38:08,920-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:38:09,273-INFO-Llama Guard result: 
+
+safe
+2025-05-21 23:38:09,273-INFO-Safe label for session hh: safe
+2025-05-21 23:38:11,263-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:38:12,697-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:38:16,029-INFO-搜索的结果前10个字:悲伤逆流成河的剧情简
+2025-05-21 23:38:16,030-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 23:38:17,479-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:38:19,684-INFO-Main chat chain response received for session hh.
+2025-05-21 23:39:00,775-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '你叫我什么...', k=3
+2025-05-21 23:39:00,777-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:39:00,777-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-21 23:39:01,038-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-21 23:39:01,039-INFO-Entering sync chat for session: hh
+2025-05-21 23:39:01,039-INFO-Calling Llama Guard sync for input: 你叫我什么...
+2025-05-21 23:39:02,568-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:39:03,181-INFO-Llama Guard result: 
+
+safe
+2025-05-21 23:39:03,181-INFO-Safe label for session hh: safe
+2025-05-21 23:39:03,922-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:39:03,969-INFO-搜索的结果前10个字:
+2025-05-21 23:39:03,969-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 23:39:04,616-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:39:05,184-INFO-Main chat chain response received for session hh.
+2025-05-21 23:39:20,328-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '我叫什么名字...', k=3
+2025-05-21 23:39:20,330-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:39:20,330-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-21 23:39:20,531-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-21 23:39:20,533-INFO-Entering sync chat for session: hh
+2025-05-21 23:39:20,533-INFO-Calling Llama Guard sync for input: 我叫什么名字...
+2025-05-21 23:39:21,922-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:39:22,224-INFO-Llama Guard result: 
+
+safe
+2025-05-21 23:39:22,225-INFO-Safe label for session hh: safe
+2025-05-21 23:39:22,947-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:39:22,950-INFO-搜索的结果前10个字:
+2025-05-21 23:39:22,950-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 23:39:23,662-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:39:24,099-INFO-Main chat chain response received for session hh.
+2025-05-21 23:39:43,947-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '你不就是我的女朋友吗...', k=3
+2025-05-21 23:39:43,949-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:39:43,949-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-21 23:39:44,135-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-21 23:39:44,136-INFO-Entering sync chat for session: hh
+2025-05-21 23:39:44,136-INFO-Calling Llama Guard sync for input: 你不就是我的女朋友吗...
+2025-05-21 23:39:45,298-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:39:45,649-INFO-Llama Guard result: 
+
+safe
+2025-05-21 23:39:45,649-INFO-Safe label for session hh: safe
+2025-05-21 23:39:47,111-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:39:47,112-INFO-搜索的结果前10个字:
+2025-05-21 23:39:47,113-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 23:39:48,647-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:39:49,444-INFO-Main chat chain response received for session hh.
+2025-05-21 23:40:04,088-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '所以你叫什么名字呢...', k=3
+2025-05-21 23:40:04,090-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:40:04,090-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-21 23:40:04,303-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-21 23:40:04,305-INFO-Entering sync chat for session: hh
+2025-05-21 23:40:04,305-INFO-Calling Llama Guard sync for input: 所以你叫什么名字呢...
+2025-05-21 23:40:05,694-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:40:06,091-INFO-Llama Guard result: 
+
+safe
+2025-05-21 23:40:06,091-INFO-Safe label for session hh: safe
+2025-05-21 23:40:07,079-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:40:07,081-INFO-搜索的结果前10个字:
+2025-05-21 23:40:07,081-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 23:40:07,795-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:40:08,488-INFO-Main chat chain response received for session hh.
+2025-05-21 23:40:34,008-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:40:34,008-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:40:34,009-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:40:34,010-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-21 23:40:34,266-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:40:34,269-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-21 23:40:34,269-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '我不我的档案里取了你的名字吗...', k=3
+2025-05-21 23:40:34,270-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-21 23:40:34,270-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-21 23:40:34,480-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-21 23:40:34,482-INFO-Entering sync chat for session: hh
+2025-05-21 23:40:34,482-INFO-Calling Llama Guard sync for input: 我不我的档案里取了你的名字吗...
+2025-05-21 23:40:35,444-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:40:35,752-INFO-Llama Guard result: 
+
+safe
+2025-05-21 23:40:35,753-INFO-Safe label for session hh: safe
+2025-05-21 23:40:36,598-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:40:36,785-INFO-搜索的结果前10个字:
+2025-05-21 23:40:36,786-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-21 23:40:38,004-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:40:39,030-INFO-Main chat chain response received for session hh.

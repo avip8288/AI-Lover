@@ -126,7 +126,7 @@ class Similarity:
             return [] 
 
 if __name__=='__main__':
-    text='你知道我的哪些信息呢'
+    text='我爱吃什么'
     simi=Similarity(embed_model)
     result=simi.process(text,'hh',6)
     print(result)

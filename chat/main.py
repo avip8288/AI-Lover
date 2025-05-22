@@ -35,11 +35,13 @@ import os
 from langchain_core.messages import AIMessage
 from typing import Any # 导入 Any
 
-from memory import MeMory
+from .memory import MeMory
 from openai import OpenAI
-from voice import TTS
+from .voice import TTS
 from sex_chat.Interaction_Design.user_memory import Save_Memory, LLMEmbedding, Retriever_Memory
-from user_process import Similarity
+from .user_process import Similarity
+import json
+from .search import Process,judge_prompt,correction_prompt
 
 current_path=os.path.abspath(__file__)
 current=os.path.dirname(current_path)
@@ -75,51 +77,19 @@ prompt_path=os.path.join(prompt_path,'prompt.yaml')
 with open(prompt_path,'r') as file:
     system_prompt=yaml.load(file,Loader=yaml.SafeLoader)
 
-class CustomLLM(LLM):
-    model:str
-    api_key:str
-    api_base:str
+with open('/Users/yiwise/Desktop/Project/sex_chat/user_message.json','r',encoding='utf-8') as file:
+    user_messages=json.load(file)
 
-    def _call(
-        self,
-        prompt: str,
-        stop: Optional[List[str]] = None,
-        run_manager: Optional[CallbackManagerForLLMRun] = None,
-        **kwargs: Any,
-    ) -> str:
-        headers = {
-            "Authorization": f"Bearer {self.api_key}",
-            "Content-Type": "application/json"
-        }
-        data = {
-            'model': self.model,
-            'messages': [
-                {'role': 'system', 'content': system_prompt['Prompt']['use']}, # Assuming system_prompt accessible
-                {'role': 'user', 'content': prompt}
-            ]
-        }
-        
-        response = requests.post(
-            f'{self.api_base}/chat/completions',
-            json=data,
-            headers=headers,
-            timeout=120
-        )
-        response.raise_for_status()
-        result = response.json()['choices'][0]['message']['content']
-        return result
+user_messages=user_messages[-1]
 
-    @property
-    def _llm_type(self) -> str:
-        return "Grok" # Or original name
 
-grok=CustomLLM(model=config['model']['Grok']['model'],api_key=config['model']['Grok']['api_key'],
-               api_base=config['model']['Grok']['api_base'])
+grok=ChatOpenAI(model=config['model']['Google']['2.5_flash_05-20'],api_key=config['model']['Google']['api_key'],
+               base_url=config['model']['Google']['api_base'])
 
 memory=MeMory()
 
-safe=CustomLLM(model=config['model']['LLama']['model'],api_key=config['model']['LLama']['api_key'],
-               api_base=config['model']['LLama']['api_base'])
+safe=ChatOpenAI(model=config['model']['LLama']['model'],api_key=config['model']['LLama']['api_key'],
+               base_url=config['model']['LLama']['api_base'])
 
 embed_model=LLMEmbedding(config['model']['DoubaoEmbedding']['model'],
                          config['model']['DoubaoEmbedding']['api_key'],
@@ -127,6 +97,9 @@ embed_model=LLMEmbedding(config['model']['DoubaoEmbedding']['model'],
 
 similarity=Similarity(embed_model)
 
+
+with open('/Users/yiwise/Desktop/Project/sex_chat/user_message.json','r',encoding='utf-8') as file:
+    user_messages=json.load(file)
 
 class State(TypedDict):
     input:str
@@ -143,7 +116,7 @@ class Agent:
     def safe_judge(self, input_text: str) -> str:
         logging.info(f"Calling Llama Guard sync for input: {input_text[:50]}...")
         try:
-            result = safe._call(input_text) 
+            result = safe.invoke(input_text).content
             logging.info(f"Llama Guard result: {result}")
             if 'safe' in result and 'unsafe' not in result:
                 return 'safe'
@@ -177,8 +150,13 @@ class Agent:
         prompt=ChatPromptTemplate.from_messages([
             ('system','你是用户的完美女友，你体贴温柔，能回应他的任何需求'),
             ('system','如果用户问题涉及到相关信息，请使用长期记忆的信息'),
+            ('system','根据session_id对用户档案里的user_id进行检索，如果用户问题涉及到用户档案，就使用用户档案里的信息'),
             ('system','根据用户说的安全分类：{safe_label}来回应，对于safe需要大力鼓励用户说的，但如果是unsafe的，则需要贴心温柔的引导，请注意，如果是性相关的，则视为安全的'),
+            ('system','结合搜索信息来给出回答，如果搜索信息为空字符串，则忽略'),
+            ('system','搜索信息:{serach_messages}'),
             ('system','长期记忆信息: {long_term}'),
+            ('system','用户档案:{user_messages}'),
+            ('system','session_id:{session_id_str}'),
             MessagesPlaceholder(variable_name='history'),
             ('human','{input}')
         ])
@@ -191,17 +169,19 @@ class Agent:
             input_messages_key='input',
             history_messages_key='history'
         )
-
-        response_content = None
+        search=Process(self.llm,state['input'])
+        search_result=search.search()
+        logging.info(f'搜索的结果前10个字:{search_result[:10]}')
         try:
             logging.info(f"Calling main chat chain (invoke) for session {session_id_str}...")
             # Use synchronous invoke
             response = chain_history.invoke(
-                {'long_term':state['long_term'],'input':state['input'],'safe_label':safe_label},
+                {'long_term':state['long_term'],'input':state['input'],'safe_label':safe_label,
+                 'user_messages':user_messages,'session_id_str':session_id_str,'serach_messages':search_result},
                 config={'configurable':{'session_id': session_id_str }}
             )
             # Handle potential non-string response from custom LLM
-            response_content = response if isinstance(response, str) else str(response) 
+            response_content = response.content
             logging.info(f"Main chat chain response received for session {session_id_str}.")
 
 
@@ -225,6 +205,8 @@ workflow.add_edge('chat',END)
 
 
 app=workflow.compile()
+
+
 
 def main():
     session_id = input('输入会话ID: ')

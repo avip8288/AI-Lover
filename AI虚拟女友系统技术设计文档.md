@@ -156,4 +156,11 @@
 
 ---
 
+##13 . 用到的技术栈
+- langchain
+- langgraph
+- networkx
+- graphlib
+- streamlit
+
 © 2025 tmracy Inc. All rights reserved.

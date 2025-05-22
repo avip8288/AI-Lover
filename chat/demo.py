@@ -1,30 +1,24 @@
 # 文件名: streamlit_app.py
 
-import sys # 确保导入 sys
-import os  # 确保导入 os
+import sys # 确保导入 sys 在最前面
+import os  # 确保导入 os 在最前面
 
-# --- 开始: 项目根目录路径修改 ---
-# 这段代码将项目根目录 ('Project/') 添加到 sys.path
-# 这样当 demo.py 运行时, Python 可以正确解析项目内的绝对导入路径
-# 例如 'from chat.main import ...' 以及 main.py 内部的 'from sex_chat...'。
-
+# --- 开始: 动态修改 sys.path 以支持从 Project/ 目录运行 ---
 # 获取当前 demo.py 脚本的绝对路径
 # 例如: /path/to/Project/sex_chat/chat/demo.py
-_current_script_path = os.path.abspath(__file__)
-# 获取 chat 目录的路径: /path/to/Project/sex_chat/chat
-_chat_dir = os.path.dirname(_current_script_path)
-# 获取 sex_chat 目录的路径: /path/to/Project/sex_chat
-_sex_chat_dir = os.path.dirname(_chat_dir)
-# 获取项目根目录 Project 的路径: /path/to/Project
-_project_root_dir = os.path.dirname(_sex_chat_dir)
+_current_script_path_demo = os.path.abspath(__file__)
 
-# 如果项目根目录不在 sys.path 中，则添加它 (在最前面，有较高优先级)
-if _project_root_dir not in sys.path:
-    sys.path.insert(0, _project_root_dir)
+# 获取 sex_chat 目录的路径: /path/to/Project/sex_chat
+# 这是我们需要的路径，以便 from chat.main 能够工作（Python 会在该路径下查找 chat 目录）
+_sex_chat_dir_demo = os.path.dirname(os.path.dirname(_current_script_path_demo))
+
+# 如果 _sex_chat_dir_demo 不在 sys.path 中，则添加它 (在最前面，有较高优先级)
+if _sex_chat_dir_demo not in sys.path:
+    sys.path.insert(0, _sex_chat_dir_demo)
 
 # 清理临时变量 (可选, 保持命名空间干净)
-del _current_script_path, _chat_dir, _sex_chat_dir, _project_root_dir
-# --- 结束: 项目根目录路径修改 ---
+# del _current_script_path_demo, _sex_chat_dir_demo
+# --- 结束: 动态修改 sys.path ---
 
 import streamlit as st
 import os

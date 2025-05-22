@@ -22,11 +22,11 @@ docker push这边的tmracy/sex-chat-app:v1.0.要和docker tag打的镜像标签�
 
 '''
 # 打标签
-docker tag sex-chat-app:v1.0.1 tmracy/sex-chat-app:v1.0.1
+docker tag sex-chat-app:v1.0.2 tmracy/sex-chat-app:v1.0.2
 
 # 推送
-docker push tmracy/sex-chat-app:v1.0.1
+docker push tmracy/sex-chat-app:v1.0.2
 
 docker pull --platform linux/amd64 python:3.10-slim
 #linux/amd64架构
-docker build --platform linux/amd64 -t sex-chat-app:v1.0.1 .
+docker build --platform linux/amd64 -t sex-chat-app:v1.0.2 .
