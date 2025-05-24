@@ -2,6 +2,7 @@
 实现自动构建用户档案并且进行保存
 实现两个大模型交互给出字典数据
 一个是实体抽取LLM，一个是摘要LLM
+另外一个大模型用来判断这个是否要写入档案
 """
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
@@ -35,9 +36,14 @@ summary_llm=ChatOpenAI(model=config['model']['Qwen']['model'],
                        api_key=config['model']['Qwen']['api_key'],
                        base_url=config['model']['Qwen']['api_base'])
 
+judge_llm=ChatOpenAI(model=config['model']['OpenAI']['model'],
+                     base_url=config['model']['OpenAI']['api_base'],
+                     api_key=config['model']['OpenAI']['api_key'])
+
 
 entity_prompt=prompt['Prompt']['entity']
 summary_prompt=prompt['Prompt']['summary']
+judge_prompt=prompt['Prompt']['judge_message']
 
 class Messages:
     def __init__(self,text,session_id):
@@ -59,27 +65,35 @@ class Messages:
         data=self.load_data()
         entity_prompt_new=ChatPromptTemplate.from_template(entity_prompt)
         summary_prompt_new=ChatPromptTemplate.from_template(summary_prompt)
+        judge_prompt_new=ChatPromptTemplate.from_template(judge_prompt)
 
         entity_chain=entity_prompt_new | entity_llm
         summary_chain=summary_prompt_new | summary_llm
+        judge_chain=judge_prompt_new | judge_llm
 
         summary=summary_chain.invoke({'text':self.text}).content
         entity=entity_chain.invoke({'text':self.text,'entity':summary}).content
 
-        #left_idx=entity.index('{')
-        #right_idx=entity.index{'}'}
+        left_idx=entity.index('{')
+        right_idx=entity.index('}')
+        json_str=entity[left_idx:right_idx+1]
 
 
-        nums=eval(entity)
-        if isinstance(nums,dict):
-            nums['user_id']=self.session_id
-            logging.info('正确的输出了字典类型')
-            data.append(nums)
-            return data
+        nums=json.loads(json_str)
+        judge=judge_chain.invoke({'json_messages':nums}).content
+        if '是' in judge:
+            if isinstance(nums,dict):
+                nums['user_id']=self.session_id
+                logging.info('正确的输出了字典类型')
+                data.append(nums)
+                return data
+            else:
+                logging.info('输出的格式不是字典类型，有问题')
+                return []
         else:
-            logging.info('输出的格式不是字典类型，有问题')
             return []
-    
+
+        
     def main(self):
         id_list=[]
         data=self.process()
@@ -88,7 +102,9 @@ class Messages:
                 user_id=nums['user_id']
                 id_list.append(user_id)
         else:
-            logging.info('之前输出的格式不是字典类型,导致空列表')
+            logging.info('输出为空列表')
+            return '不增加信息到用户档案里'
+            
 
         id_total=list(set(id_list))
         id_multi=[id for id in id_total if id_list.count(id)>=2]
@@ -123,7 +139,7 @@ class Messages:
     
 
 if __name__=='__main__':
-    text='我好喜欢范冰冰啊'
+    text='你是傻逼吗'
     messages=Messages(text,'hh')
     result=messages.main()
     print(result)

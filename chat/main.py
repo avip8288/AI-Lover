@@ -42,6 +42,7 @@ from sex_chat.Interaction_Design.user_memory import Save_Memory, LLMEmbedding, R
 from .user_process import Similarity
 import json
 from .search import Process,judge_prompt,correction_prompt
+from sex_chat.Interaction_Design.user_messages import Messages
 
 current_path=os.path.abspath(__file__)
 current=os.path.dirname(current_path)
@@ -83,8 +84,8 @@ with open('/Users/yiwise/Desktop/Project/sex_chat/user_message.json','r',encodin
 user_messages=user_messages[-1]
 
 
-grok=ChatOpenAI(model=config['model']['Google']['2.5_flash_05-20'],api_key=config['model']['Google']['api_key'],
-               base_url=config['model']['Google']['api_base'])
+grok=ChatOpenAI(model=config['model']['Grok']['model'],api_key=config['model']['Grok']['api_key'],
+               base_url=config['model']['Grok']['api_base'])
 
 memory=MeMory()
 
@@ -96,6 +97,7 @@ embed_model=LLMEmbedding(config['model']['DoubaoEmbedding']['model'],
                          config['model']['DoubaoEmbedding']['api_base'])
 
 similarity=Similarity(embed_model)
+
 
 
 with open('/Users/yiwise/Desktop/Project/sex_chat/user_message.json','r',encoding='utf-8') as file:
@@ -146,7 +148,9 @@ class Agent:
         # Use synchronous safe_judge
         safe_label = self.safe_judge(state['input'])
         logging.info(f"Safe label for session {session_id_str}: {safe_label}")
-
+        messages=Messages(state['input'],state['session_id'])
+        messages_result=messages.main()
+        logging.info(f'用户档案的结果:{messages_result}')
         prompt=ChatPromptTemplate.from_messages([
             ('system','你是用户的完美女友，你体贴温柔，能回应他的任何需求'),
             ('system','如果用户问题涉及到相关信息，请使用长期记忆的信息'),

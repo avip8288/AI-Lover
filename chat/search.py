@@ -76,7 +76,7 @@ class Process:
             return ''
         
 if __name__=='__main__':
-    text='科比单场最高多少分啊'
+    text='草泥马'
     search=Process(llm,text)
     result=search.search()
     print(result)
