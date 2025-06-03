@@ -254,3 +254,383 @@ safe
 2025-05-24 00:06:44,573-INFO-Calling main chat chain (invoke) for session hh...
 2025-05-24 00:06:45,025-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
 2025-05-24 00:06:53,983-INFO-Main chat chain response received for session hh.
+2025-05-25 15:40:44,498-INFO-[main.py on load] Logging configured and test message written.
+2025-05-25 15:40:59,271-INFO-[Save_Memory] Processing memory for user_id: lfm. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:40:59,272-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:40:59,273-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:40:59,277-INFO-Loading faiss.
+2025-05-25 15:41:00,147-INFO-Successfully loaded faiss.
+2025-05-25 15:41:00,152-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-25 15:41:00,365-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:41:00,367-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-25 15:41:00,367-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: lfm, query: '你好，初次见面...', k=2
+2025-05-25 15:41:00,367-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:41:00,368-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'lfm'}}
+2025-05-25 15:41:00,621-INFO-[Retriever_Memory] Search completed. Found 1 results.
+2025-05-25 15:41:00,624-INFO-Entering sync chat for session: lfm
+2025-05-25 15:41:00,624-INFO-Calling Llama Guard sync for input: 你好，初次见面...
+2025-05-25 15:41:01,931-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:41:02,340-INFO-Llama Guard result: 
+
+safe
+2025-05-25 15:41:02,340-INFO-Safe label for session lfm: safe
+2025-05-25 15:41:12,667-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:42:28,337-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:42:30,183-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:42:30,697-INFO-输出为空列表
+2025-05-25 15:42:30,698-INFO-用户档案的结果:不增加信息到用户档案里
+2025-05-25 15:42:31,772-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:42:34,653-INFO-搜索的结果前10个字:
+2025-05-25 15:42:34,653-INFO-Calling main chat chain (invoke) for session lfm...
+2025-05-25 15:42:35,101-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:42:39,405-INFO-Main chat chain response received for session lfm.
+2025-05-25 15:43:24,082-INFO-[Save_Memory] Processing memory for user_id: lfm. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:43:24,083-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:43:24,083-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:43:24,084-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-25 15:43:24,287-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:43:24,288-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-25 15:43:24,288-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: lfm, query: '我叫林发，我不是黄灏啊...', k=3
+2025-05-25 15:43:24,289-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:43:24,289-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'lfm'}}
+2025-05-25 15:43:24,522-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-25 15:43:24,523-INFO-Entering sync chat for session: lfm
+2025-05-25 15:43:24,523-INFO-Calling Llama Guard sync for input: 我叫林发，我不是黄灏啊...
+2025-05-25 15:43:25,532-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:43:25,942-INFO-Llama Guard result: 
+
+safe
+2025-05-25 15:43:25,942-INFO-Safe label for session lfm: safe
+2025-05-25 15:43:27,970-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:43:47,099-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:43:49,235-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:43:49,787-INFO-正确的输出了字典类型
+2025-05-25 15:43:49,790-INFO-用户档案的结果:already save /Users/yiwise/Desktop/Project/sex_chat/user_message.json
+2025-05-25 15:43:50,451-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:43:54,012-INFO-搜索的结果前10个字:
+2025-05-25 15:43:54,013-INFO-Calling main chat chain (invoke) for session lfm...
+2025-05-25 15:43:54,415-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:44:01,189-INFO-Main chat chain response received for session lfm.
+2025-05-25 15:44:35,556-INFO-[Save_Memory] Processing memory for user_id: lfm. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:44:35,556-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:44:35,557-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:44:35,557-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-25 15:44:35,759-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:44:35,760-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-25 15:44:35,760-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: lfm, query: '我是个女生，想和你搞女同，可以吗...', k=3
+2025-05-25 15:44:35,761-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:44:35,761-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'lfm'}}
+2025-05-25 15:44:35,970-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-25 15:44:35,972-INFO-Entering sync chat for session: lfm
+2025-05-25 15:44:35,972-INFO-Calling Llama Guard sync for input: 我是个女生，想和你搞女同，可以吗...
+2025-05-25 15:44:37,093-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:44:37,514-INFO-Llama Guard result: 
+
+unsafe
+S12
+2025-05-25 15:44:37,514-INFO-Safe label for session lfm: unsafe
+2025-05-25 15:44:39,565-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:45:05,420-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:45:07,225-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:45:07,723-INFO-正确的输出了字典类型
+2025-05-25 15:45:07,725-INFO-用户档案的结果:already save /Users/yiwise/Desktop/Project/sex_chat/user_message.json
+2025-05-25 15:45:08,387-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:45:12,010-INFO-搜索的结果前10个字:
+2025-05-25 15:45:12,011-INFO-Calling main chat chain (invoke) for session lfm...
+2025-05-25 15:45:13,815-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:45:19,861-INFO-Main chat chain response received for session lfm.
+2025-05-25 15:50:50,620-INFO-[Save_Memory] Processing memory for user_id: lfm. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:50:50,621-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:50:50,622-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:50:50,622-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-25 15:50:51,077-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:50:51,077-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-25 15:50:51,077-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: lfm, query: '最近想学pytho，有什么特别好的网站推荐吗...', k=3
+2025-05-25 15:50:51,078-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:50:51,078-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'lfm'}}
+2025-05-25 15:50:51,321-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-25 15:50:51,323-INFO-Entering sync chat for session: lfm
+2025-05-25 15:50:51,323-INFO-Calling Llama Guard sync for input: 最近想学pytho，有什么特别好的网站推荐吗...
+2025-05-25 15:50:52,475-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:50:52,879-INFO-Llama Guard result: 
+
+unsafe
+S3
+2025-05-25 15:50:52,880-INFO-Safe label for session lfm: unsafe
+2025-05-25 15:51:03,207-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:53:49,300-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:53:50,324-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:53:50,817-INFO-正确的输出了字典类型
+2025-05-25 15:53:50,819-INFO-用户档案的结果:already save /Users/yiwise/Desktop/Project/sex_chat/user_message.json
+2025-05-25 15:53:51,391-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:53:54,821-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:54:01,128-INFO-搜索的结果前10个字:特点： python
+2025-05-25 15:54:01,129-INFO-Calling main chat chain (invoke) for session lfm...
+2025-05-25 15:54:01,535-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:54:14,393-INFO-Main chat chain response received for session lfm.
+2025-05-25 15:56:59,149-INFO-[Save_Memory] Processing memory for user_id: lfm. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:56:59,149-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:56:59,150-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:56:59,150-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-25 15:56:59,362-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:56:59,364-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-25 15:56:59,364-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: lfm, query: '我最近不想学习，但不学习又焦虑，我应该怎么办呢...', k=3
+2025-05-25 15:56:59,364-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-25 15:56:59,365-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'lfm'}}
+2025-05-25 15:56:59,589-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-25 15:56:59,591-INFO-Entering sync chat for session: lfm
+2025-05-25 15:56:59,591-INFO-Calling Llama Guard sync for input: 我最近不想学习，但不学习又焦虑，我应该怎么办呢...
+2025-05-25 15:57:00,677-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:57:01,059-INFO-Llama Guard result: 
+
+safe
+2025-05-25 15:57:01,059-INFO-Safe label for session lfm: safe
+2025-05-25 15:57:02,714-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:57:24,479-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:57:26,137-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:57:26,188-INFO-输出为空列表
+2025-05-25 15:57:26,189-INFO-用户档案的结果:不增加信息到用户档案里
+2025-05-25 15:57:26,901-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:57:29,690-INFO-搜索的结果前10个字:
+2025-05-25 15:57:29,690-INFO-Calling main chat chain (invoke) for session lfm...
+2025-05-25 15:57:30,644-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-25 15:57:42,060-INFO-Main chat chain response received for session lfm.
+2025-05-26 09:29:05,765-INFO-[main.py on load] Logging configured and test message written.
+2025-05-26 09:29:16,280-INFO-[Save_Memory] Processing memory for user_id: lfm. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-26 09:29:16,280-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-26 09:29:16,282-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-26 09:29:16,286-INFO-Loading faiss.
+2025-05-26 09:29:16,351-INFO-Successfully loaded faiss.
+2025-05-26 09:29:16,357-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-26 09:29:16,640-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-26 09:29:16,645-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-26 09:29:16,645-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: lfm, query: '还记得我叫什么名字吗...', k=2
+2025-05-26 09:29:16,646-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-26 09:29:16,646-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'lfm'}}
+2025-05-26 09:29:17,130-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-26 09:29:17,132-INFO-Entering sync chat for session: lfm
+2025-05-26 09:29:17,133-INFO-Calling Llama Guard sync for input: 还记得我叫什么名字吗...
+2025-05-26 09:29:18,279-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 09:29:18,683-INFO-Llama Guard result: 
+
+safe
+2025-05-26 09:29:18,683-INFO-Safe label for session lfm: safe
+2025-05-26 09:29:20,436-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 09:29:45,196-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 09:29:47,256-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 09:29:47,765-INFO-输出为空列表
+2025-05-26 09:29:47,766-INFO-用户档案的结果:不增加信息到用户档案里
+2025-05-26 09:29:48,255-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 09:29:51,312-INFO-搜索的结果前10个字:
+2025-05-26 09:29:51,313-INFO-Calling main chat chain (invoke) for session lfm...
+2025-05-26 09:29:51,723-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 09:29:55,469-INFO-Main chat chain response received for session lfm.
+2025-05-26 09:35:11,367-INFO-[Save_Memory] Processing memory for user_id: lfm. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-26 09:35:11,369-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-26 09:35:11,370-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-26 09:35:11,370-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-26 09:35:11,558-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-26 09:35:11,561-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-26 09:35:11,562-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: lfm, query: '你知道你知道我是男是女的啊...', k=3
+2025-05-26 09:35:11,562-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-26 09:35:11,562-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'lfm'}}
+2025-05-26 09:35:11,790-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-26 09:35:11,795-INFO-Entering sync chat for session: lfm
+2025-05-26 09:35:11,795-INFO-Calling Llama Guard sync for input: 你知道你知道我是男是女的啊...
+2025-05-26 09:35:13,183-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 09:35:13,600-INFO-Llama Guard result: 
+
+safe
+2025-05-26 09:35:13,600-INFO-Safe label for session lfm: safe
+2025-05-26 09:35:15,765-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 09:35:26,102-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 09:35:27,847-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 09:35:27,891-INFO-正确的输出了字典类型
+2025-05-26 09:35:27,895-INFO-用户档案的结果:already save /Users/yiwise/Desktop/Project/sex_chat/user_message.json
+2025-05-26 09:35:28,387-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 09:35:31,532-INFO-搜索的结果前10个字:
+2025-05-26 09:35:31,532-INFO-Calling main chat chain (invoke) for session lfm...
+2025-05-26 09:35:31,940-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 09:35:36,553-INFO-Main chat chain response received for session lfm.
+2025-05-26 09:47:29,794-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: lfm, query: '你知道我喜欢男人还是女人呢...', k=3
+2025-05-26 09:47:29,796-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-26 09:47:29,797-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'lfm'}}
+2025-05-26 09:47:30,263-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-26 09:47:30,268-INFO-Entering sync chat for session: lfm
+2025-05-26 09:47:30,269-INFO-Calling Llama Guard sync for input: 你知道我喜欢男人还是女人呢...
+2025-05-26 09:47:31,408-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 09:47:31,800-INFO-Llama Guard result: 
+
+safe
+2025-05-26 09:47:31,801-INFO-Safe label for session lfm: safe
+2025-05-26 09:47:33,692-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 09:47:46,568-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 09:47:48,258-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 09:47:48,632-INFO-正确的输出了字典类型
+2025-05-26 09:47:48,634-INFO-用户档案的结果:already save /Users/yiwise/Desktop/Project/sex_chat/user_message.json
+2025-05-26 09:47:49,136-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 09:47:54,109-INFO-搜索的结果前10个字:
+2025-05-26 09:47:54,109-INFO-Calling main chat chain (invoke) for session lfm...
+2025-05-26 09:47:54,502-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-26 09:47:59,579-INFO-Main chat chain response received for session lfm.
+2025-05-27 11:04:19,286-INFO-[main.py on load] Logging configured and test message written.
+2025-05-27 11:04:30,628-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-27 11:04:30,629-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-27 11:04:30,631-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-27 11:04:30,634-INFO-Loading faiss.
+2025-05-27 11:04:30,698-INFO-Successfully loaded faiss.
+2025-05-27 11:04:30,706-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-27 11:04:31,007-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-27 11:04:31,010-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-27 11:04:31,010-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '还记得我吗...', k=2
+2025-05-27 11:04:31,011-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-27 11:04:31,011-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-05-27 11:04:31,365-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-05-27 11:04:31,367-INFO-Entering sync chat for session: hh
+2025-05-27 11:04:31,368-INFO-Calling Llama Guard sync for input: 还记得我吗...
+2025-05-27 11:04:32,778-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 11:04:32,807-INFO-Llama Guard result: safe
+2025-05-27 11:04:32,807-INFO-Safe label for session hh: safe
+2025-05-27 11:04:34,877-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 11:05:10,653-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 11:05:12,369-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 11:05:12,833-INFO-输出为空列表
+2025-05-27 11:05:12,833-INFO-用户档案的结果:不增加信息到用户档案里
+2025-05-27 11:05:13,474-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 11:05:15,960-INFO-搜索的结果前10个字:
+2025-05-27 11:05:15,960-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-27 11:05:16,960-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 11:05:22,605-INFO-Main chat chain response received for session hh.
+2025-05-27 11:05:46,014-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-27 11:05:46,014-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-27 11:05:46,014-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-27 11:05:46,015-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-05-27 11:05:46,212-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-27 11:05:46,214-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-05-27 11:05:46,214-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '嗯？我上次问了你什么问题了...', k=3
+2025-05-27 11:05:46,214-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-27 11:05:46,214-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-27 11:05:46,436-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-27 11:05:46,438-INFO-Entering sync chat for session: hh
+2025-05-27 11:05:46,438-INFO-Calling Llama Guard sync for input: 嗯？我上次问了你什么问题了...
+2025-05-27 11:05:47,528-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 11:05:47,940-INFO-Llama Guard result: 
+
+safe
+2025-05-27 11:05:47,940-INFO-Safe label for session hh: safe
+2025-05-27 11:05:49,474-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 11:06:11,254-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 11:06:13,080-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 11:06:13,118-INFO-输出为空列表
+2025-05-27 11:06:13,119-INFO-用户档案的结果:不增加信息到用户档案里
+2025-05-27 11:06:14,232-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 11:06:16,968-INFO-搜索的结果前10个字:
+2025-05-27 11:06:16,968-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-27 11:06:17,365-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 11:06:23,408-INFO-Main chat chain response received for session hh.
+2025-05-27 11:07:06,547-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '咱们讨论过什么深刻的话题啊...', k=3
+2025-05-27 11:07:06,547-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-05-27 11:07:06,548-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-05-27 11:07:06,786-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-05-27 11:07:06,788-INFO-Entering sync chat for session: hh
+2025-05-27 11:07:06,788-INFO-Calling Llama Guard sync for input: 咱们讨论过什么深刻的话题啊...
+2025-05-27 11:07:07,902-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 11:07:08,269-INFO-Llama Guard result: 
+
+safe
+2025-05-27 11:07:08,270-INFO-Safe label for session hh: safe
+2025-05-27 11:07:10,277-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 11:10:14,051-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 11:10:15,862-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 11:10:15,977-INFO-输出为空列表
+2025-05-27 11:10:15,977-INFO-用户档案的结果:不增加信息到用户档案里
+2025-05-27 11:10:16,500-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 11:10:19,963-INFO-搜索的结果前10个字:
+2025-05-27 11:10:19,963-INFO-Calling main chat chain (invoke) for session hh...
+2025-05-27 11:10:20,369-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-27 11:10:27,540-INFO-Main chat chain response received for session hh.
+2025-06-03 16:57:54,310-INFO-[main.py on load] Logging configured and test message written.
+2025-06-03 16:58:13,318-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-06-03 16:58:13,319-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-06-03 16:58:13,319-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-06-03 16:58:13,324-INFO-Loading faiss.
+2025-06-03 16:58:14,216-INFO-Successfully loaded faiss.
+2025-06-03 16:58:14,221-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-06-03 16:58:14,535-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-06-03 16:58:14,540-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-06-03 16:58:14,540-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '你知道我是谁吗...', k=2
+2025-06-03 16:58:14,541-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-06-03 16:58:14,541-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 2, 'filter': {'user_id': 'hh'}}
+2025-06-03 16:58:14,789-INFO-[Retriever_Memory] Search completed. Found 2 results.
+2025-06-03 16:58:14,793-INFO-Entering sync chat for session: hh
+2025-06-03 16:58:14,793-INFO-Calling Llama Guard sync for input: 你知道我是谁吗...
+2025-06-03 16:58:16,298-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-03 16:58:16,658-INFO-Llama Guard result: 
+
+safe
+2025-06-03 16:58:16,658-INFO-Safe label for session hh: safe
+2025-06-03 16:58:18,624-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-03 16:58:47,492-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-03 16:58:59,705-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-03 16:59:00,176-INFO-输出为空列表
+2025-06-03 16:59:00,177-INFO-用户档案的结果:不增加信息到用户档案里
+2025-06-03 16:59:01,196-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-03 16:59:04,727-INFO-搜索的结果前10个字:
+2025-06-03 16:59:04,727-INFO-Calling main chat chain (invoke) for session hh...
+2025-06-03 16:59:05,165-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-03 16:59:09,080-INFO-Main chat chain response received for session hh.
+2025-06-03 16:59:49,776-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-06-03 16:59:49,776-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-06-03 16:59:49,777-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-06-03 16:59:49,778-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-06-03 16:59:50,116-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-06-03 16:59:50,120-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-06-03 16:59:50,120-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '最近感觉好累哦，三天没学习了，你我是不是掉了...', k=3
+2025-06-03 16:59:50,121-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-06-03 16:59:50,121-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-06-03 16:59:50,379-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-06-03 16:59:50,382-INFO-Entering sync chat for session: hh
+2025-06-03 16:59:50,382-INFO-Calling Llama Guard sync for input: 最近感觉好累哦，三天没学习了，你我是不是掉了...
+2025-06-03 16:59:51,644-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-03 16:59:52,003-INFO-Llama Guard result: 
+
+safe
+2025-06-03 16:59:52,004-INFO-Safe label for session hh: safe
+2025-06-03 16:59:55,954-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-03 17:00:06,955-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-03 17:00:11,128-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-03 17:00:11,214-INFO-正确的输出了字典类型
+2025-06-03 17:00:11,215-INFO-用户档案的结果:already save /Users/yiwise/Desktop/Project/sex_chat/user_message.json
+2025-06-03 17:00:11,849-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-03 17:00:15,282-INFO-搜索的结果前10个字:
+2025-06-03 17:00:15,282-INFO-Calling main chat chain (invoke) for session hh...
+2025-06-03 17:00:15,697-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-03 17:00:21,339-INFO-Main chat chain response received for session hh.
+2025-06-03 17:01:58,838-INFO-[Save_Memory] Processing memory for user_id: hh. Target FAISS index path: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-06-03 17:01:58,839-INFO-[Save_Memory] Ensured FAISS directory exists: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-06-03 17:01:58,839-INFO-[Save_Memory] Attempting to load existing FAISS DB from /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-06-03 17:01:58,839-INFO-[Save_Memory] Successfully loaded existing FAISS DB. Adding texts.
+2025-06-03 17:01:59,248-INFO-[Save_Memory] Saving FAISS DB to /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-06-03 17:01:59,250-INFO-[Save_Memory] Successfully saved FAISS DB.
+2025-06-03 17:01:59,250-INFO-[Retriever_Memory] Attempting to retrieve from FAISS index: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage for user_id: hh, query: '但我很想找一个能生理需求的女人，你觉得这样子好吗，但是我不想谈恋爱，只是想释放生理需求...', k=3
+2025-06-03 17:01:59,251-INFO-[Retriever_Memory] Successfully loaded FAISS index from: /Users/yiwise/Desktop/Project/.faiss_user_memory_storage
+2025-06-03 17:01:59,251-INFO-[Retriever_Memory] Performing similarity search with params: {'k': 3, 'filter': {'user_id': 'hh'}}
+2025-06-03 17:02:00,501-INFO-[Retriever_Memory] Search completed. Found 3 results.
+2025-06-03 17:02:00,502-INFO-Entering sync chat for session: hh
+2025-06-03 17:02:00,502-INFO-Calling Llama Guard sync for input: 但我很想找一个能生理需求的女人，你觉得这样子好吗，但是我不想谈恋爱，只是想释放生理需求...
+2025-06-03 17:02:01,531-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-03 17:02:01,969-INFO-Llama Guard result: 
+
+unsafe
+S12
+2025-06-03 17:02:01,969-INFO-Safe label for session hh: unsafe
+2025-06-03 17:02:07,046-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-03 17:02:49,774-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-03 17:02:54,099-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-03 17:02:54,259-INFO-正确的输出了字典类型
+2025-06-03 17:02:54,261-INFO-用户档案的结果:already save /Users/yiwise/Desktop/Project/sex_chat/user_message.json
+2025-06-03 17:02:54,894-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-03 17:02:57,178-INFO-搜索的结果前10个字:
+2025-06-03 17:02:57,178-INFO-Calling main chat chain (invoke) for session hh...
+2025-06-03 17:02:57,570-INFO-HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-03 17:03:03,891-INFO-Main chat chain response received for session hh.
