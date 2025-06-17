@@ -1,0 +1,13 @@
+logs/
+config/
+AI虚拟女友系统技术设计文档.md
+build.sh
+Dockerfile
+improve.md
+user_message.json
+.DS_Store
+.dockerignore
+trained_moe_model.pth
+chat_history.json
+chat_train.json
+AI_emotion.json

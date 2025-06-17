@@ -1,107 +1,98 @@
-import sys # Add this import
+import sys
 import os
-
-if __name__ == "__main__":
-    current_script_path = os.path.abspath(__file__)
-  
-    chat_dir = os.path.dirname(current_script_path)
-
-    sex_chat_dir = os.path.dirname(chat_dir)
-
-    project_root_dir = os.path.dirname(sex_chat_dir)
-
-    if project_root_dir not in sys.path:
-        sys.path.insert(0, project_root_dir)
+import yaml
+import logging
+import json
+from typing import Any, TypedDict
 
 
+# 解决macOS上可能出现的OMP库冲突问题
+os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
-from langchain_core.prompts import ChatPromptTemplate
+
+current_script_path = os.path.abspath(__file__)
+
+chat_dir = os.path.dirname(current_script_path)
+
+
+PROJECT_ROOT_DIR = os.path.dirname(chat_dir)
+
+if PROJECT_ROOT_DIR not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT_DIR)
+
+
+LOGS_DIR = os.path.join(PROJECT_ROOT_DIR, 'logs')
+CONFIG_DIR = os.path.join(PROJECT_ROOT_DIR, 'config')
+
+LOG_FILE_PATH = os.path.join(LOGS_DIR, 'sex_log.log')
+MODEL_CONFIG_PATH = os.path.join(CONFIG_DIR, 'model_config.yaml')
+PROMPT_CONFIG_PATH = os.path.join(CONFIG_DIR, 'prompt.yaml')
+USER_MESSAGE_PATH = os.path.join(PROJECT_ROOT_DIR, 'user_message.json')
+
+
+os.makedirs(LOGS_DIR, exist_ok=True)
+
+
+logging.basicConfig(filename=LOG_FILE_PATH, level=logging.INFO, format='%(asctime)s-%(levelname)s-%(message)s', force=True)
+logging.info("main.py: Logging configured successfully.")
+
+# 加载模型和提示词配置
+try:
+    with open(MODEL_CONFIG_PATH, 'r', encoding='utf-8') as file:
+        config = yaml.safe_load(file)
+    with open(PROMPT_CONFIG_PATH, 'r', encoding='utf-8') as file:
+        system_prompt = yaml.safe_load(file)
+except FileNotFoundError as e:
+    logging.error(f"Configuration file not found: {e}. Please ensure config/model_config.yaml and config/prompt.yaml exist.")
+    sys.exit(1) # 配置是必须的，找不到就退出
+
+# 加载用户消息
+try:
+    with open(USER_MESSAGE_PATH, 'r', encoding='utf-8') as file:
+        user_messages_list = json.load(file)
+    # 获取最后一个用户消息，如果列表为空则返回空字典
+    user_messages = user_messages_list[-1] if user_messages_list else {}
+except (FileNotFoundError, json.JSONDecodeError):
+    logging.warning(f"Could not load or parse {USER_MESSAGE_PATH}. Initializing with empty user messages.")
+    user_messages = {}
+
+
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langgraph.graph import StateGraph, END
 from langchain.schema import HumanMessage
 from langchain_openai import ChatOpenAI
 from langchain_core.runnables.history import RunnableWithMessageHistory
-from langchain.memory import ChatMessageHistory
-
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-
-from langchain_core.language_models.llms import LLM
-import requests
-from typing import Any, Dict, Iterator, List, Mapping, Optional,TypedDict
-from langchain_core.callbacks.manager import CallbackManagerForLLMRun
-import yaml
-import logging
-import os
-
+from langchain_community.chat_message_histories import ChatMessageHistory
 from langchain_core.messages import AIMessage
-from typing import Any # 导入 Any
 
-from .memory import MeMory
-from openai import OpenAI
-from .voice import TTS
-from sex_chat.Interaction_Design.user_memory import Save_Memory, LLMEmbedding, Retriever_Memory
-from .user_process import Similarity
-import json
-from .search import Process,judge_prompt,correction_prompt
-from sex_chat.Interaction_Design.user_messages import Messages
-
-current_path=os.path.abspath(__file__)
-current=os.path.dirname(current_path)
-path=os.path.dirname(current)
-logs_path=os.path.join(path,'logs')
-os.makedirs(logs_path,exist_ok=True)
-log_path=os.path.join(logs_path,'sex_log.log')
-
-#在这里添加下面的调试代码 VVVVVV
-# --- 调试：打印计算出的日志文件绝对路径 ---
-_ABS_LOG_PATH_FOR_DEBUG = os.path.abspath(log_path)
-print(f"[main.py via print] Attempting to log to: {_ABS_LOG_PATH_FOR_DEBUG}")
-# --- 调试结束 ---
-
-logging.basicConfig(filename=log_path,level=logging.INFO,format='%(asctime)s-%(levelname)s-%(message)s',force=True)
-
-# 在这里添加下面的调试代码 VVVVVV
-# --- 调试：尝试记录一条测试日志 ---
-try:
-    logging.info("[main.py on load] Logging configured and test message written.")
-except Exception as e_log_test:
-    print(f"[main.py via print] Error trying to write initial test log: {e_log_test}")
-# --- 调试结束 ---
-
-config_path=os.path.join(path,'config')
-config_path=os.path.join(config_path,'model_config.yaml')
-
-with open(config_path,'r') as file:
-    config=yaml.load(file,Loader=yaml.SafeLoader)
-
-prompt_path=os.path.join(path,'config')
-prompt_path=os.path.join(prompt_path,'prompt.yaml')
-with open(prompt_path,'r') as file:
-    system_prompt=yaml.load(file,Loader=yaml.SafeLoader)
-
-with open('/Users/yiwise/Desktop/Project/sex_chat/user_message.json','r',encoding='utf-8') as file:
-    user_messages=json.load(file)
-
-user_messages=user_messages[-1]
+from chat.memory import MeMory
+from Interaction_Design.user_memory import Save_Memory, LLMEmbedding, Retriever_Memory
+from chat.user_process import Similarity
+from chat.search import Process
+from Interaction_Design.user_messages import Messages
+from Interaction_Design.AI_emotion_status import Score
+from Interaction_Design.chat_history import chat_history
 
 
-grok=ChatOpenAI(model=config['model']['Grok']['model'],api_key=config['model']['Grok']['api_key'],
-               base_url=config['model']['Grok']['api_base'])
+# ==============================================================================
+# 5. 初始化核心类和模型
+# ==============================================================================
+grok = ChatOpenAI(model=config['model']['Grok']['model'], api_key=config['model']['Grok']['api_key'],
+                  base_url=config['model']['Grok']['api_base'])
 
-memory=MeMory()
+memory = MeMory()
 
-safe=ChatOpenAI(model=config['model']['LLama']['model'],api_key=config['model']['LLama']['api_key'],
-               base_url=config['model']['LLama']['api_base'])
+safe = ChatOpenAI(model=config['model']['LLama']['model'], api_key=config['model']['LLama']['api_key'],
+                  base_url=config['model']['LLama']['api_base'])
 
-embed_model=LLMEmbedding(config['model']['DoubaoEmbedding']['model'],
-                         config['model']['DoubaoEmbedding']['api_key'],
-                         config['model']['DoubaoEmbedding']['api_base'])
+embed_model = LLMEmbedding(config['model']['DoubaoEmbedding']['model'],
+                           config['model']['DoubaoEmbedding']['api_key'],
+                           config['model']['DoubaoEmbedding']['api_base'])
 
-similarity=Similarity(embed_model)
+similarity = Similarity(embed_model)
 
+AI_score = Score()
 
-
-with open('/Users/yiwise/Desktop/Project/sex_chat/user_message.json','r',encoding='utf-8') as file:
-    user_messages=json.load(file)
 
 class State(TypedDict):
     input:str
@@ -227,12 +218,12 @@ def main():
     while True:
         content = result.get('answer', '没有回复')
         print(content)
-        
+        chat_history_messages=chat_history(user_text_input,content,session_id)
         user_text_input_loop = input('输入信息: ')
-        
+        user_text_input=user_text_input_loop
+        AI_score.main(session_id)
         if user_text_input_loop.strip().lower() in ['exit', 'quit', '退出']:
-            print('再见，宝贝，爱你')
-            return
+            return '再见，宝贝，爱你'
         user_process=similarity.process(user_text_input_loop,session_id,3)
         if user_process:
             score=user_process[0][-1]

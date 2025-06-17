@@ -76,7 +76,7 @@ class Process:
             return ''
         
 if __name__=='__main__':
-    text='草泥马'
+    text='你好啊'
     search=Process(llm,text)
     result=search.search()
     print(result)

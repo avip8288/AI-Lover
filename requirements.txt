@@ -8,3 +8,5 @@ streamlit==1.41.1
 langchain-community
 openai
 simpleaudio
+numpy
+torch==2.2.2

@@ -1,4 +1,4 @@
-# AI Girlfriend Chatbot (AI 女友聊天机器人)
+# AI Lover Chatbot (AI伴侣聊天机器人)
 
 [English](#english) | [中文](#中文)
 
@@ -8,7 +8,7 @@
 
 ### 💘 Project Overview
 
-This project is a sophisticated, interactive AI girlfriend designed to provide companionship and engaging, emotionally supportive conversations. She is not just a simple chatbot; she comes with features like long-term memory, voice, dynamic user profiling, and the ability to search the web for real-time information, allowing for a deeply personalized and immersive experience.
+This project is a sophisticated, interactive AI Lover designed to provide companionship and engaging, emotionally supportive conversations. She is not just a simple chatbot; she comes with features like long-term memory, voice, dynamic user profiling, and the ability to search the web for real-time information, allowing for a deeply personalized and immersive experience.
 
 ### ✨ Features
 
@@ -18,6 +18,7 @@ This project is a sophisticated, interactive AI girlfriend designed to provide c
 *   **Dynamic User Profiling**: Automatically creates and updates a user profile based on your chats to better understand your personality, preferences, and history.
 *   **Web Search Integration**: Can access up-to-date information from the web via the Tavily API to discuss current events and a wide range of topics.
 *   **Content Moderation**: Includes a safety guard layer to ensure conversations remain appropriate and constructive.
+*   **Dynamic AI Emotional State (New!)**: Powered by a custom Mixture of Experts (MoE) model, the AI can dynamically perceive, express, and manage its own emotional state based on conversation context, leading to more human-like and empathetic interactions.
 *   **Modular Tech Stack**: Built with a modern Python stack including Streamlit for the UI, LangGraph for the agentic logic, and a variety of powerful Large Language Models (LLMs) for different tasks.
 
 ### 🛠️ How to Use
@@ -25,7 +26,7 @@ This project is a sophisticated, interactive AI girlfriend designed to provide c
 #### 1. Clone the Repository
 ```bash
 git clone https://github.com/tmracy/AI-Lover.git
-cd sex_chat
+cd AI-Lover # Changed: Navigate into the renamed project directory
 ```
 
 #### 2. Create a Virtual Environment
@@ -113,7 +114,22 @@ Prompt:
   judge_message: "Does this information contain a significant, long-term fact about the user that should be saved to their profile? Respond with 'Yes' or 'No'."
 ```
 
-#### 6. Run the Application
+#### 6. Train the AI Emotion Model (Crucial Step for Emotional AI)
+The AI's dynamic emotional state relies on a pre-trained Mixture of Experts (MoE) model. You need to train this model before running the main application.
+
+1.  **Generate Training Data:** This step creates synthetic conversation data for training the MoE model.
+    ```bash
+    python -m Interaction_Design.MOE_data
+    ```
+    This will generate a `chat_train.json` file in the project root.
+
+2.  **Train and Save the MoE Model:** This step trains the emotional model and saves it as `trained_moe_model.pth` in the project root.
+    ```bash
+    python -c "from Interaction_Design.AI_emotion_status import MOEModule, User; moe_module = MOEModule(User); moe_module.train_and_save_model(); print('Model training and saving initiated.')"
+    ```
+    *Note: This might take some time depending on your hardware and API limits.*
+
+#### 7. Run the Application
 The recommended way to run the app is through the Streamlit web interface.
 
 ```bash
@@ -124,9 +140,9 @@ Open your web browser to the local URL provided by Streamlit. You will be asked 
 #### Alternative: Text-Only Mode (CLI)
 If you prefer a command-line interface without the web UI and voice features, you can run the application directly in your terminal. This mode is ideal for quick tests or environments where a GUI is not available.
 
-From within the `sex_chat` directory, run:
+From within the `AI-Lover` project root directory, run:
 ```bash
-python -m chat.main
+python chat/main.py # Changed: Use direct script execution
 ```
 The application will prompt you for a session ID and then you can start chatting directly in your terminal.
 
@@ -136,7 +152,7 @@ The application will prompt you for a session ID and then you can start chatting
 
 ### 💘 项目简介
 
-本项目是一个高度互动的 AI 女友，旨在提供陪伴、情感支持和有吸引力的对话。她不只是一个简单的聊天机器人，她具备长期记忆、语音输出、动态用户画像和实时网络搜索等功能，为您带来深度个性化和沉浸式的交流体验。
+本项目是一个高度互动的 AI 伴侣，旨在提供陪伴、情感支持和有吸引力的对话。她不只是一个简单的聊天机器人，她具备长期记忆、语音输出、动态用户画像和实时网络搜索等功能，为您带来深度个性化和沉浸式的交流体验。
 
 ### ✨ 功能特性
 
@@ -146,6 +162,7 @@ The application will prompt you for a session ID and then you can start chatting
 *   **动态用户画像**: 根据您的聊天内容，自动创建和更新用户档案，以更好地了解您的个性、偏好和经历。
 *   **网络搜索集成**: 能通过 Tavily API 访问最新的网络信息，与您讨论时事和各种话题。
 *   **内容审核**: 内置安全防护层，确保对话内容的适当性和建设性。
+*   **动态AI情感状态 (New!)**: 由定制的混合专家（MoE）模型驱动，AI 能根据对话上下文动态感知、表达和管理自身的情绪状态，带来更拟人化、更具同理心的互动。
 *   **模块化技术栈**: 使用现代 Python 技术栈构建，包括用于前端界面的 Streamlit、用于智能体逻辑的 LangGraph，以及用于不同任务的多种强大大型语言模型（LLM）。
 
 ### 🛠️ 如何使用
@@ -153,7 +170,7 @@ The application will prompt you for a session ID and then you can start chatting
 #### 1. 克隆代码库
 ```bash
 git clone https://github.com/tmracy/AI-Lover.git
-cd sex_chat
+cd AI-Lover 
 ```
 
 #### 2. 创建虚拟环境
@@ -241,7 +258,22 @@ Prompt:
   judge_message: "这段信息是否包含关于用户的、值得长期保存的重要事实？请只回答'是'或'否'。"
 ```
 
-#### 6. 运行程序
+#### 6. 训练AI情感模型 (AI情感核心步骤)
+AI 的动态情感状态依赖于一个预训练的混合专家（MoE）模型。在运行主应用之前，您需要训练此模型。
+
+1.  **生成训练数据：** 此步骤会为 MoE 模型生成合成对话数据。
+    ```bash
+    python -m Interaction_Design.MOE_data
+    ```
+    这将在项目根目录生成一个 `chat_train.json` 文件。
+
+2.  **训练并保存MoE模型：** 此步骤将训练情感模型，并将其保存为项目根目录下的 `trained_moe_model.pth` 文件。
+    ```bash
+    python -c "from Interaction_Design.AI_emotion_status import MOEModule, User; moe_module = MOEModule(User); moe_module.train_and_save_model(); print('Model training and saving initiated.')"
+    ```
+    *注意：此过程可能需要一些时间，具体取决于您的硬件和API限制。*
+
+#### 7. 运行程序
 推荐通过 Streamlit Web 界面来运行此应用。
 
 ```bash
@@ -253,10 +285,10 @@ streamlit run chat/demo.py
 
 如果您偏好使用命令行界面，不需要网页UI和语音功能，可以直接在终端中运行本应用。此模式非常适合快速测试或在没有图形界面的环境中使用。
 
-在 `sex_chat` 目录下，运行：
+在 `AI-Lover` 项目根目录下，运行：
 ```bash
-python -m chat.main
+python chat/main.py # 已修改：使用直接脚本执行方式
 ```
 程序会提示您输入会话ID，之后您便可以直接在终端里开始聊天。
 
-    
+---

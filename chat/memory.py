@@ -1,5 +1,5 @@
 from langchain_core.runnables.history import RunnableWithMessageHistory
-from langchain.memory import ChatMessageHistory
+from langchain_community.chat_message_histories import ChatMessageHistory
 
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 

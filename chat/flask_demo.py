@@ -1,6 +1,9 @@
 from flask import Flask, request,Response # 导入 request
 import json
 # from waitress import serve # 可以注释掉或删掉 waitress 的 import
+"""
+请忽略本代码，后续如果用到flask接口开发，会重新写
+"""
 
 app=Flask(__name__)
 

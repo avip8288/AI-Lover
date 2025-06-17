@@ -98,7 +98,7 @@ class Emotion:
         return result
     
 if __name__=='__main__':
-    text='每次见到你的时候我都勃起的好快'
+    text='见到你的时候我心跳的好快，脸颊泛红'
     user_emotion=Emotion(emotion_llm,text)
     print(user_emotion.main())
     

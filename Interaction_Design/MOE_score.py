@@ -21,7 +21,8 @@ class MOEScore(nn.Module):
                 nn.GELU(),
                 nn.Linear(hidden_size,hidden_size),
                 nn.GELU(),
-                nn.Linear(hidden_size,output_size)
+                nn.Linear(hidden_size,output_size),
+                nn.Sigmoid()
             ) for _ in range(num_experts)
         ])
 
@@ -68,7 +69,7 @@ class MOEScore(nn.Module):
 
         aux_loss=self.cv_squared(importance)+self.cv_squared(router_probs.mean(dim=0))
 
-        final_output=torch.zeros(batch_size,self.output_size)
+        final_output=torch.zeros(batch_size,self.output_size,device=x.device)
 
         for expert_idx in range(self.num_experts):
             indicates=(expert_idx==top_k_idx).nonzero(as_tuple=True)
@@ -99,7 +100,7 @@ class MOETrain:
         task_loss=self.task_loss(y_pred,y)
 
         weight=aux_loss_weight if aux_loss_weight is not None else self.model.aux_loss_weight
-        total_loss=task_loss+aux_loss
+        total_loss=task_loss+aux_loss*weight
 
         total_loss.backward()
         self.optim.step()
@@ -111,12 +112,15 @@ class MOETrain:
         return task_loss.item(),total_loss.item(),aux_loss.item()
     
     def train(self,train_loader,epochs=10,aux_loss_weight=None):
+        #从模型中自动获取device参数
+        device=next(self.model.parameters()).device
         for epoch in range(epochs):
             epoch_total=0
             epoch_task=0
             epoch_aux=0
 
             for x,y in train_loader:
+                x,y=x.to(device),y.to(device)
                 task_loss,total_loss,aux_loss=self.train_step(x,y)
 
                 epoch_total+=total_loss
@@ -128,9 +132,7 @@ class MOETrain:
             mean_task=epoch_task/n
             mean_aux=epoch_aux/n
 
-            print(f'total_loss averge:{mean_total},
-                  task_loss averge:{mean_task},
-                  aux_loss averge:{mean_aux}')
+            print(f'total_loss averge:{mean_total},task_loss averge:{mean_task},aux_loss averge:{mean_aux}')
             
     def evaluate(self,test_loader):
         self.model.eval()
@@ -149,19 +151,7 @@ class MOETrain:
     
 
 if __name__=='__main__':
-    """
-    # 1. 实例化你的MOE模型
-moe_model = MOEScore(input_size=..., hidden_size=..., output_size=...)
-
-# 2. 实例化你的训练器，将模型传入
-moe_trainer = MOETrain(model=moe_model, learning_rate=1e-3)
-
-# 3. 进行训练 (moe_model 的权重会在这一步被更新)
-moe_trainer.train(train_loader, epochs=10)
-
-# 4. 训练完成后，保存更新后的 moe_model 的权重
-torch.save(moe_model.state_dict(), 'trained_moe_model.pth')
-    """
+    pass
 
 
 

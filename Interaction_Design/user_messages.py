@@ -139,7 +139,7 @@ class Messages:
     
 
 if __name__=='__main__':
-    text='你是傻逼吗'
+    text='你好可爱'
     messages=Messages(text,'hh')
     result=messages.main()
     print(result)

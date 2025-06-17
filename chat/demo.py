@@ -1,61 +1,49 @@
 # 文件名: streamlit_app.py
-
-import sys # 确保导入 sys 在最前面
-import os  # 确保导入 os 在最前面
-
-# --- 开始: 动态修改 sys.path 以支持从 Project/ 目录运行 ---
-# 获取当前 demo.py 脚本的绝对路径
-# 例如: /path/to/Project/sex_chat/chat/demo.py
-_current_script_path_demo = os.path.abspath(__file__)
-
-# 获取 sex_chat 目录的路径: /path/to/Project/sex_chat
-# 这是我们需要的路径，以便 from chat.main 能够工作（Python 会在该路径下查找 chat 目录）
-_sex_chat_dir_demo = os.path.dirname(os.path.dirname(_current_script_path_demo))
-
-# 如果 _sex_chat_dir_demo 不在 sys.path 中，则添加它 (在最前面，有较高优先级)
-if _sex_chat_dir_demo not in sys.path:
-    sys.path.insert(0, _sex_chat_dir_demo)
-
-# 清理临时变量 (可选, 保持命名空间干净)
-# del _current_script_path_demo, _sex_chat_dir_demo
-# --- 结束: 动态修改 sys.path ---
-
-import streamlit as st
+import sys
 import os
+import streamlit as st
 import yaml
 import logging
-from typing import TypedDict, Any, Iterator # Iterator for generator type hint
-import struct # For WAV header
-import io     # For BytesIO if needed, but direct bytearray is fine
-# Remove asyncio and nest_asyncio imports
-# import asyncio
-# import nest_asyncio
-# nest_asyncio.apply()
+import struct
+from typing import TypedDict, Iterator
 
-# --- 导入 ---
+# --- 统一且健壮的路径设置 ---
+# 将项目根目录添加到 sys.path，以便 streamlit run 可以找到模块
+# 获取当前脚本的路径 -> /path/to/Project/AI-Lover/chat/demo.py
+_current_script_path = os.path.abspath(__file__)
+# 获取 chat 目录 -> /path/to/Project/AI-Lover/chat
+_chat_dir = os.path.dirname(_current_script_path)
+# 获取项目根目录 -> /path/to/Project/AI-Lover
+PROJECT_ROOT_DIR = os.path.dirname(_chat_dir)
+
+# 将项目根目录添加到Python解释器的模块搜索路径中
+if PROJECT_ROOT_DIR not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT_DIR)
+
+# --- 导入自定义模块 ---
+# 现在可以安全地从项目根目录开始导入
 try:
     from chat.main import State, app, agent, embed_model
-    from chat.voice import TTS # TTS is a generator yielding raw pcm_s16le bytes
-    # Removed: from chat.memory import MeMory (using memory_handler instance from chat.main)
-    # Removed: from langgraph.graph import END, StateGraph (not used directly in demo.py)
+    from chat.voice import TTS
 except ImportError as e:
-    st.error(f"无法导入必要的模块: {e}")
+    st.error(f"无法导入必要的模块: {e}. 请确保已正确安装 'requirements.txt' 中的所有依赖，并从项目根目录(AI-Lover)运行 `streamlit run chat/demo.py`。")
     st.stop()
 
-# --- 日志配置 (保持不变) ---
-logs_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'logs')
-os.makedirs(logs_path, exist_ok=True)
-log_path = os.path.join(logs_path, 'sex_log.log')
+# --- 日志配置 ---
+LOGS_DIR = os.path.join(PROJECT_ROOT_DIR, 'logs')
+os.makedirs(LOGS_DIR, exist_ok=True)
+LOG_FILE_PATH = os.path.join(LOGS_DIR, 'sex_log.log')
+
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 if not logger.hasHandlers():
-    file_handler = logging.FileHandler(log_path)
+    file_handler = logging.FileHandler(LOG_FILE_PATH)
     formatter = logging.Formatter('%(asctime)s-%(levelname)s-%(message)s')
     file_handler.setFormatter(formatter)
     logger.addHandler(file_handler)
 
 
-# --- WAV Header Helper --- 
+# --- WAV Header Helper ---
 def _create_wav_header(sample_rate: int, num_channels: int, sample_width_bytes: int, num_frames: int) -> bytes:
     """Helper function to create a WAV header for raw PCM data."""
     datasize = num_frames * num_channels * sample_width_bytes
@@ -76,38 +64,40 @@ def _create_wav_header(sample_rate: int, num_channels: int, sample_width_bytes: 
     header.extend(struct.pack('<I', datasize))      # Subchunk2Size
     return bytes(header)
 
-# --- Streamlit 界面 (标题等不变) ---
-st.set_page_config(page_title="你的专属女友❤️", page_icon="💬")
-st.title("你的专属女友 ❤️")
-st.caption("和你的虚拟女友开始聊天吧！输入 'exit'，退出或者quit 结束对话。")
+# --- Streamlit 界面 ---
+st.set_page_config(page_title="你的专属伴侣❤️", page_icon="💬")
+st.title("你的专属伴侣 ❤️")
+st.caption("和你的虚拟伴侣开始聊天吧！输入 'exit'，'quit' 或 '退出' 结束对话。")
 
-# --- 会话管理 (不变) ---
-if 'session_id' not in st.session_state:
-    session_id_input = st.text_input("请输入你的专属会话 ID (例如 'user123'):", key="session_id_input_demo")
-    if session_id_input:
-        st.session_state.session_id = session_id_input
-        st.rerun()
-    else:
-        st.info("请输入一个会话 ID 以开始聊天。")
-        st.stop()
-current_session_id = str(st.session_state.session_id)
+
+# --- 会话管理 ---
+# 初始化聊天记录
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-# --- 显示聊天记录 (不变) ---
-for msg_idx, message_data in enumerate(st.session_state.messages):
-    with st.chat_message(message_data["role"]):
-        st.markdown(message_data["content"])
+# 检查 session_id 是否已设置
+if 'session_id' not in st.session_state:
+    session_id_input = st.text_input("请输入你的专属会话 ID (例如 'user123'):", key="session_id_input")
+    if st.button("开始聊天", key="start_chat"):
+        if session_id_input:
+            st.session_state.session_id = session_id_input
+            st.rerun()
+        else:
+            st.warning("会话 ID 不能为空。")
+    st.stop() # 如果 session_id 未设置，则显示输入框并停止执行后续代码
 
-# --- 移除异步处理函数 --- 
-# async def process_user_input(user_prompt: str): ...
 
-# --- 移除直接测试按钮 --- 
-# st.divider()
-# st.subheader("直接网络调用测试")
-# if st.button("测试直接调用 Grok API"): ...
+# --- 主应用逻辑（只有在 session_id 设置后才会运行）---
 
-# --- 用户输入处理 (恢复为简单的同步调用) ---
+# 从 session_state 获取当前 session_id
+current_session_id = str(st.session_state.session_id)
+
+# 显示聊天记录
+for msg_data in st.session_state.messages:
+    with st.chat_message(msg_data["role"]):
+        st.markdown(msg_data["content"])
+
+# 用户输入处理
 if prompt := st.chat_input("你想对我说什么？", key="chat_input_main"):
     # 显示用户输入
     st.session_state.messages.append({"role": "user", "content": prompt})
@@ -120,108 +110,88 @@ if prompt := st.chat_input("你想对我说什么？", key="chat_input_main"):
         st.session_state.messages.append({"role": "assistant", "content": farewell_message})
         with st.chat_message("assistant"):
             st.markdown(farewell_message)
+        # 可以在这里加一个按钮让用户可以清除 session 并重新开始
+        if st.button("结束当前会话"):
+            # 清理 session state
+            for key in list(st.session_state.keys()):
+                del st.session_state[key]
+            st.rerun()
         st.stop()
-    else:
-        # 直接调用同步的 app.invoke
-        with st.spinner("正在思考..."):
-            try:
-                # 修改：使用 agent.search_memory 获取长期记忆，与 main.py 的 main() 函数行为一致
-                # 假设 k=10 与 main.py 中的设置一致
-                # agent.search_memory 期望的参数顺序是 (query_text, embed_model, session_id, k)
-                # 假设它返回一个文档列表 (Langchain Document objects)
-                logger.info(f"[Streamlit][Session: {current_session_id}] Calling agent.search_memory for long-term memory with query: \"{prompt[:50]}...\"")
-                retrieved_docs = agent.search_memory(prompt, embed_model, current_session_id, k=10)
-                
-                long_term_memory_str = ""
-                if isinstance(retrieved_docs, list):
-                    # 将文档内容拼接成字符串
-                    long_term_memory_str = ". ".join([doc.page_content for doc in retrieved_docs if hasattr(doc, 'page_content')])
-                    logger.info(f"[Streamlit][Session: {current_session_id}] Retrieved {len(retrieved_docs)} documents for long-term memory. Combined into string of length {len(long_term_memory_str)}.")
-                elif isinstance(retrieved_docs, str): # 如果 search_memory 直接返回字符串
-                    long_term_memory_str = retrieved_docs
-                    logger.info(f"[Streamlit][Session: {current_session_id}] Retrieved string from agent.search_memory of length {len(long_term_memory_str)}.")
-                else:
-                    logger.warning(f"[Streamlit][Session: {current_session_id}] agent.search_memory returned unexpected type: {type(retrieved_docs)}. Using empty long-term memory.")
-                
-                logger.debug(f"[Streamlit][Session: {current_session_id}] Long-term memory string for State: \"{long_term_memory_str[:100]}...\"")
 
+    # 调用后端的逻辑
+    with st.spinner("正在思考..."):
+        try:
+            logger.info(f"[Streamlit][Session: {current_session_id}] Calling agent.search_memory for long-term memory with query: \"{prompt[:50]}...\"")
+            # 使用 agent.search_memory 获取长期记忆, 统一 k=3 与 main.py 逻辑对齐
+            retrieved_docs = agent.search_memory(prompt, embed_model, current_session_id, k=3)
 
-                message = State(
-                    input=prompt,
-                    long_term=long_term_memory_str, # 使用从 search_memory 获取并处理后的字符串
-                    session_id=current_session_id,
-                    answer=""
-                )
+            long_term_memory_str = ""
+            if isinstance(retrieved_docs, list):
+                # 将文档内容拼接成字符串
+                long_term_memory_str = ". ".join([doc.page_content for doc in retrieved_docs if hasattr(doc, 'page_content')])
+                logger.info(f"[Streamlit][Session: {current_session_id}] Retrieved {len(retrieved_docs)} documents for long-term memory.")
+            elif isinstance(retrieved_docs, str): # 兼容直接返回字符串的情况
+                long_term_memory_str = retrieved_docs
+                logger.info(f"[Streamlit][Session: {current_session_id}] Retrieved string from agent.search_memory.")
+            else:
+                logger.warning(f"[Streamlit][Session: {current_session_id}] agent.search_memory returned unexpected type: {type(retrieved_docs)}. Using empty long-term memory.")
 
-                # 使用同步 invoke
-                result = app.invoke(message, config={"configurable": {"session_id": current_session_id}})
+            # 准备 LangGraph 的状态
+            message_state = State(
+                input=prompt,
+                long_term=long_term_memory_str,
+                session_id=current_session_id,
+                answer=""
+            )
 
-                # 处理结果
-                assistant_response = result.get('answer', '嗯...我好像不知道该说什么了。')
-                logger.info(f"[Streamlit][Session: {current_session_id}] Model Response: {assistant_response}")
+            # 使用同步 invoke 调用 graph
+            result = app.invoke(message_state, config={"configurable": {"session_id": current_session_id}})
+            assistant_response = result.get('answer', '嗯...我好像不知道该说什么了。')
+            logger.info(f"[Streamlit][Session: {current_session_id}] Model Response: {assistant_response}")
 
-                # 添加到消息历史
-                st.session_state.messages.append({"role": "assistant", "content": assistant_response})
-                # 立即显示助手的回复
-                with st.chat_message("assistant"):
-                    st.markdown(assistant_response)
+            # 更新并显示聊天记录
+            st.session_state.messages.append({"role": "assistant", "content": assistant_response})
+            with st.chat_message("assistant"):
+                st.markdown(assistant_response)
 
-                # --- 修改：调用 TTS，收集数据块，构建 WAV，然后在客户端播放 ---
-                if assistant_response:
-                    logger.info(f"[Streamlit][Session: {current_session_id}] Attempting to get audio stream via TTS for: \"{assistant_response[:50]}...\"")
-                    
-                    audio_chunk_generator: Iterator[bytes] = TTS(assistant_response)
-                    
-                    raw_audio_data = bytearray()
-                    chunk_count = 0
-                    for chunk in audio_chunk_generator:
-                        if chunk:
-                            raw_audio_data.extend(chunk)
-                            chunk_count += 1
-                    logger.info(f"[Streamlit][Session: {current_session_id}] Finished collecting audio chunks. Total chunks: {chunk_count}. Total raw audio data: {len(raw_audio_data)} bytes.")
-                    
-                    if raw_audio_data:
-                        logger.info(f"[Streamlit][Session: {current_session_id}] Received raw audio data, {len(raw_audio_data)} bytes. Constructing WAV.")
-                        
-                        sample_rate = 44100
-                        num_channels = 1 # Assuming mono
-                        sample_width_bytes = 2 # For pcm_s16le
+            # --- 调用 TTS 生成并播放音频 ---
+            if assistant_response:
+                logger.info(f"[Streamlit][Session: {current_session_id}] Generating audio via TTS for: \"{assistant_response[:50]}...\"")
 
-                        num_frames = len(raw_audio_data) // (num_channels * sample_width_bytes)
-                        
-                        if num_frames > 0:
-                            wav_header = _create_wav_header(sample_rate, num_channels, sample_width_bytes, num_frames)
-                            wav_bytes = wav_header + raw_audio_data
-                            
-                            # --- DEBUG: Save the generated WAV to a file ---
-                            try:
-                                # Ensure logs_path is defined earlier in your script
-                                temp_wav_filename = f"temp_audio_output_{current_session_id}_{len(st.session_state.messages)}.wav"
-                                temp_wav_path = os.path.join(logs_path, temp_wav_filename)
-                                with open(temp_wav_path, "wb") as f:
-                                    f.write(wav_bytes)
-                                logger.info(f"[Streamlit][Session: {current_session_id}] DEBUG: Temporary WAV file saved to: {temp_wav_path}")
-                            except Exception as e_save:
-                                logger.error(f"[Streamlit][Session: {current_session_id}] DEBUG: Error saving temporary WAV file: {e_save}")
-                            # --- END DEBUG ---
+                audio_chunk_generator: Iterator[bytes] = TTS(assistant_response)
 
-                            st.audio(wav_bytes, format='audio/wav')
-                            logger.info(f"[Streamlit][Session: {current_session_id}] WAV constructed and passed to st.audio.")
-                        else:
-                            logger.warning(f"[Streamlit][Session: {current_session_id}] Not enough data to form a complete audio frame. Raw data length: {len(raw_audio_data)}")
+                raw_audio_data = bytearray()
+                for chunk in audio_chunk_generator:
+                    if chunk:
+                        raw_audio_data.extend(chunk)
 
+                logger.info(f"[Streamlit][Session: {current_session_id}] Collected {len(raw_audio_data)} bytes of raw audio data.")
+
+                if raw_audio_data:
+                    # 定义音频参数
+                    sample_rate = 44100
+                    num_channels = 1 # 单声道
+                    sample_width_bytes = 2 # 16-bit PCM
+
+                    num_frames = len(raw_audio_data) // (num_channels * sample_width_bytes)
+
+                    if num_frames > 0:
+                        # 创建 WAV 头部并与音频数据拼接
+                        wav_header = _create_wav_header(sample_rate, num_channels, sample_width_bytes, num_frames)
+                        wav_bytes = wav_header + raw_audio_data
+
+                        # 在 Streamlit 中播放音频
+                        st.audio(wav_bytes, format='audio/wav')
+                        logger.info(f"[Streamlit][Session: {current_session_id}] WAV constructed and passed to st.audio.")
                     else:
-                        logger.warning(f"[Streamlit][Session: {current_session_id}] TTS generator yielded no data.")
-                # --- 音频处理结束 ---
+                        logger.warning(f"[Streamlit][Session: {current_session_id}] Not enough raw data to form a complete audio frame.")
+                else:
+                    logger.warning(f"[Streamlit][Session: {current_session_id}] TTS generator yielded no data.")
 
-            except Exception as e:
-                error_message = f"处理消息时发生错误: {e}"
-                st.error(error_message)
-                logger.error(f"[Streamlit][Session: {current_session_id}] Error processing message: {e}", exc_info=True)
-                st.session_state.messages.append({"role": "assistant", "content": f"抱歉，处理时出错了：{e}"})
+        except Exception as e:
+            error_message = f"处理消息时发生错误: {e}"
+            st.error(error_message)
+            logger.error(f"[Streamlit][Session: {current_session_id}] Error processing message: {e}", exc_info=True)
+            st.session_state.messages.append({"role": "assistant", "content": f"抱歉，处理时出错了：{e}"})
 
-        # Streamlit 会在脚本结束时自动刷新，通常不需要手动 rerun
-        # st.rerun()
-
-# --- (可选) 清除聊天记录按钮 (保持不变) ---
-# ...
+    st.rerun() # 确保每次交互后刷新界面状态
